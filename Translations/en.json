@@ -1,0 +1,17 @@
+{
+  "account": {
+    "Choose Language": "Choose Language",
+    "ភាសាខ្មែរ": "Khmer",
+    "ភាសាអង់គ្លេស": "English"
+  },
+  "tab": {
+    "Account": "Account",
+    "Back": "Back",
+    "Settings": "Settings",
+    "Address": "Address"
+  },
+  "startUp": {
+    "Version": "Version",
+    "Powered by": "Powered by"
+  }
+}
