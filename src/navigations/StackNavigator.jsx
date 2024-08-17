@@ -1,6 +1,6 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import Settings from '../screens/settings';
+import Settings from '../screens/Settings';
 import Address, {
   screenOptions as AddressScreenOptions,
 } from '../screens/Address';
@@ -8,6 +8,11 @@ import BottomTabNavigator from './BottomTabNavigator';
 import {useTranslation} from 'react-i18next';
 import {Colors, Fonts, Sizes} from '../constants';
 import AboutUs from '../screens/AboutUs';
+import Buying from '../screens/Buying';
+import SignIn from '../screens/SignIn';
+import SignUp from '../screens/SignUp';
+import VerificationOTP from '../screens/VerificationOTP';
+import Profile from '../screens/Profile';
 
 export default function StackNavigator() {
   const Stack = createStackNavigator();
@@ -16,13 +21,13 @@ export default function StackNavigator() {
   const defaultNavOptions = {
     headerBackTitle: t('tab.Back'),
     headerTintColor: Colors.BLACK,
-
     headerTitleStyle: {
       fontSize: Sizes.TWENTY,
       color: Colors.BLACK,
       fontFamily: Fonts.MEDIUM,
     },
     headerBackTitleVisible: false,
+    headerTitleAlign: 'center',
   };
 
   return (
@@ -35,23 +40,96 @@ export default function StackNavigator() {
       <Stack.Screen
         name="Settings"
         component={Settings}
-        options={{title: t('tab.Settings')}}
+        options={{
+          title: t('tab.Settings'),
+          headerStyle: {
+            shadowColor: '#000',
+            shadowOffset: {
+              width: 0,
+              height: 1,
+            },
+            shadowOpacity: 0.18,
+            shadowRadius: 1.0,
+
+            elevation: 1,
+          },
+        }}
       />
       <Stack.Screen
         name="Address"
         component={Address}
-        options={{title: t('tab.Address')}}
+        options={{
+          title: t('tab.Address'),
+          headerStyle: {
+            shadowColor: '#000',
+            shadowOffset: {
+              width: 0,
+              height: 1,
+            },
+            shadowOpacity: 0.18,
+            shadowRadius: 1.0,
+
+            elevation: 1,
+          },
+        }}
       />
       <Stack.Screen
         name="AboutUs"
         component={AboutUs}
         options={{
           title: null,
+        }}
+      />
+      <Stack.Screen
+        name="Buying"
+        component={Buying}
+        options={{
+          title: t('tab.Buying'),
           headerStyle: {
-            elevation: 0,
-            shadowOpacity: 0,
+            shadowColor: '#000',
+            shadowOffset: {
+              width: 0,
+              height: 1,
+            },
+            shadowOpacity: 0.18,
+            shadowRadius: 1.0,
+
+            elevation: 1,
           },
         }}
+      />
+      <Stack.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          title: t('tab.Profile'),
+          headerStyle: {
+            shadowColor: '#000',
+            shadowOffset: {
+              width: 0,
+              height: 1,
+            },
+            shadowOpacity: 0.18,
+            shadowRadius: 1.0,
+
+            elevation: 1,
+          },
+        }}
+      />
+      <Stack.Screen
+        name="SignIn"
+        component={SignIn}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="SignUp"
+        component={SignUp}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="VerificationOTP"
+        component={VerificationOTP}
+        options={{headerShown: false}}
       />
     </Stack.Navigator>
   );

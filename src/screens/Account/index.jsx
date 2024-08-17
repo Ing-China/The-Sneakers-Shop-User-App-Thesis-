@@ -14,14 +14,12 @@ import {setToggleLanguage} from '../../store/action/settings';
 import {useDispatch} from 'react-redux';
 import {useSettings} from '../../hooks';
 import {navigate} from '../../navigations/RootNavigation';
-import {useNavigation} from '@react-navigation/native';
 
 export default function Account() {
   const bottomSheetModalRef = useRef(null);
   const dispatch = useDispatch();
   const {t} = useTranslation();
   const settings = useSettings();
-  const navigation = useNavigation();
 
   const switchToEnglish = () => {
     i18n.changeLanguage('en');
@@ -56,20 +54,20 @@ export default function Account() {
   );
   return (
     <ScrollView style={styles.container}>
-      <SettingTouchable onPress={() => ''}>
+      <SettingTouchable onPress={() => navigate('Profile')}>
         <View style={styles.settingContainer}>
           <View style={styles.settingWrapper}>
             <Icons.USER width={24} height={24} color={Colors.BLACK} />
-            <Text style={styles.settingText}>Profile</Text>
+            <Text style={styles.settingText}>{t('account.Profile')}</Text>
           </View>
           <Icons.ARROWRIGHT width={18} height={18} />
         </View>
       </SettingTouchable>
-      <SettingTouchable onPress={() => ''}>
+      <SettingTouchable onPress={() => navigate('Buying')}>
         <View style={styles.settingContainer}>
           <View style={styles.settingWrapper}>
             <Icons.BOX width={24} height={24} color={Colors.BLACK} />
-            <Text style={styles.settingText}>Buying</Text>
+            <Text style={styles.settingText}>{t('account.Buying')}</Text>
           </View>
           <Icons.ARROWRIGHT width={18} height={18} />
         </View>
@@ -78,7 +76,7 @@ export default function Account() {
         <View style={styles.settingContainer}>
           <View style={styles.settingWrapper}>
             <Icons.FAVORITE width={24} height={24} color={Colors.BLACK} />
-            <Text style={styles.settingText}>Favorites</Text>
+            <Text style={styles.settingText}>{t('account.Favorites')}</Text>
           </View>
           <Icons.ARROWRIGHT width={18} height={18} />
         </View>
@@ -87,7 +85,7 @@ export default function Account() {
         <View style={styles.settingContainer}>
           <View style={styles.settingWrapper}>
             <Icons.STORE width={24} height={24} color={Colors.BLACK} />
-            <Text style={styles.settingText}>About Us</Text>
+            <Text style={styles.settingText}>{t('account.About Us')}</Text>
           </View>
           <Icons.ARROWRIGHT width={18} height={18} />
         </View>
@@ -96,7 +94,7 @@ export default function Account() {
         <View style={styles.settingContainer}>
           <View style={styles.settingWrapper}>
             <Icons.TRANSLATE width={24} height={24} color={Colors.BLACK} />
-            <Text style={styles.settingText}>Language</Text>
+            <Text style={styles.settingText}>{t('account.Language')}</Text>
           </View>
           <Icons.ARROWRIGHT width={18} height={18} />
         </View>
@@ -105,16 +103,16 @@ export default function Account() {
         <View style={styles.settingContainer}>
           <View style={styles.settingWrapper}>
             <Icons.SETTING width={24} height={24} color={Colors.BLACK} />
-            <Text style={styles.settingText}>Setting</Text>
+            <Text style={styles.settingText}>{t('account.Setting')}</Text>
           </View>
           <Icons.ARROWRIGHT width={18} height={18} />
         </View>
       </SettingTouchable>
-      <SettingTouchable onPress={() => ''}>
+      <SettingTouchable onPress={() => navigate('SignIn')}>
         <View style={styles.settingContainer}>
           <View style={styles.settingWrapper}>
             <Icons.LOGOUT width={24} height={24} color={Colors.BLACK} />
-            <Text style={styles.settingText}>Sign Out</Text>
+            <Text style={styles.settingText}>{t('account.Sign Out')}</Text>
           </View>
           <Icons.ARROWRIGHT width={18} height={18} />
         </View>

@@ -15,7 +15,6 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.WHITE,
   },
   wrapper: {
-    // height: height * 0.5,
     height: height / 2.5,
   },
   logo: {
@@ -36,7 +35,6 @@ const styles = StyleSheet.create({
   },
   poweredWrapper: {
     flexDirection: 'row',
-    alignItems: 'center',
   },
   labelPoweredBy: {
     fontSize: Sizes.EIGHTEEN,

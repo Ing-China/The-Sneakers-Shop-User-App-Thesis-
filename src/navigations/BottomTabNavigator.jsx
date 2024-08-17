@@ -9,7 +9,7 @@ import Notification from '../screens/Notification';
 import Account from '../screens/Account';
 import {Colors, Fonts, Icons, Sizes} from '../constants';
 
-import Settings from '../screens/settings';
+import Settings from '../screens/Settings';
 import {useTranslation} from 'react-i18next';
 import Address from '../screens/Address';
 
@@ -88,7 +88,7 @@ export default function BottomTabNavigator() {
   return (
     <Tab.Navigator>
       <Tab.Screen
-        name="Home"
+        name="HomeTab"
         component={Home}
         options={{
           headerShown: false,
@@ -103,8 +103,8 @@ export default function BottomTabNavigator() {
         }}
       />
       <Tab.Screen
-        name="Favorite"
-        component={Favotie}
+        name="Search"
+        component={Search}
         options={{
           headerShown: false,
           tabBarIcon: ({focused, size}) => (
@@ -118,10 +118,27 @@ export default function BottomTabNavigator() {
         }}
       />
       <Tab.Screen
-        name="Search"
-        component={Search}
+        name="Favorite"
+        component={Favotie}
         options={{
-          headerShown: false,
+          title: t('tab.Favorite'),
+          headerTitleAlign: 'left',
+          headerTitleStyle: {
+            fontSize: Sizes.TWENTYFIVE,
+            color: Colors.BLACK,
+            fontFamily: Fonts.MEDIUM,
+          },
+          headerStyle: {
+            shadowColor: '#000',
+            shadowOffset: {
+              width: 0,
+              height: 1,
+            },
+            shadowOpacity: 0.18,
+            shadowRadius: 1.0,
+
+            elevation: 1,
+          },
           tabBarIcon: ({focused, size}) => (
             <Icons.FAVORITE
               width={size}
@@ -136,7 +153,24 @@ export default function BottomTabNavigator() {
         name="Notification"
         component={Notification}
         options={{
-          headerShown: false,
+          title: t('tab.Notification'),
+          headerTitleAlign: 'left',
+          headerTitleStyle: {
+            fontSize: Sizes.TWENTYFIVE,
+            color: Colors.BLACK,
+            fontFamily: Fonts.MEDIUM,
+          },
+          headerStyle: {
+            shadowColor: '#000',
+            shadowOffset: {
+              width: 0,
+              height: 1,
+            },
+            shadowOpacity: 0.18,
+            shadowRadius: 1.0,
+
+            elevation: 1,
+          },
           tabBarIcon: ({focused, size}) => (
             <Icons.NOTIFICATION
               width={size}
@@ -157,6 +191,17 @@ export default function BottomTabNavigator() {
             fontSize: Sizes.TWENTYFIVE,
             color: Colors.BLACK,
             fontFamily: Fonts.MEDIUM,
+          },
+          headerStyle: {
+            shadowColor: '#000',
+            shadowOffset: {
+              width: 0,
+              height: 1,
+            },
+            shadowOpacity: 0.18,
+            shadowRadius: 1.0,
+
+            elevation: 1,
           },
           tabBarIcon: ({focused, size}) => (
             <Icons.USER

@@ -2,16 +2,66 @@
   "account": {
     "Choose Language": "Choose Language",
     "ភាសាខ្មែរ": "Khmer",
-    "ភាសាអង់គ្លេស": "English"
+    "ភាសាអង់គ្លេស": "English",
+    "About Us": "About Us",
+    "Sign Out": "Sign Out",
+    "Setting": "Setting",
+    "Language": "Language",
+    "Favorites": "Favorites",
+    "Buying": "Buying",
+    "Profile": "Profile"
   },
   "tab": {
     "Account": "Account",
     "Back": "Back",
     "Settings": "Settings",
-    "Address": "Address"
+    "Address": "Address",
+    "Favorite": "Favorite",
+    "Notification": "Notification",
+    "Buying": "Buying",
+    "Profile": "Profile"
   },
   "startUp": {
     "Version": "Version",
     "Powered by": "Powered by"
+  },
+  "home": {
+    "Recommended For You": "Recommended For You",
+    "Shop By Category": "Shop By Category",
+    "Recently Viewed": "Recently Viewed",
+    "Popular Brands": "Popular Brands"
+  },
+  "search": {
+    "Find your favourite one": "Find your favourite one"
+  },
+  "buying": {
+    "Orders": "Orders",
+    "History": "History"
+  },
+  "signin": {
+    "Sign In": "Sign In",
+    "Phone Number": "Phone Number",
+    "Password": "Password",
+    "Forgot Password?": "Forgot Password?",
+    "Log in": "Log in",
+    "Or Login with": "Or Login with",
+    "Sign in with Google": "Sign in with Google",
+    "Don't have an account?": "Don't have an account?",
+    "SignUp": " SignUp"
+  },
+  "signup": {
+    "Sign Up": "Sign Up",
+    "Name": "Name",
+    "Phone Number": "Phone Number",
+    "Password": "Password",
+    "Confirm Password": "Confirm Password",
+    "Log In": "Log In",
+    "Already have an account?": "Already have an account?"
+  },
+  "otp": {
+    "Verification code": "Verification code",
+    "Resend": " Resend",
+    "Didn't Received the code?": "Didn't Received the code?",
+    "We've send an SMS with an activation code to your phone number +855": "We've send an SMS with an activation code to your phone number +855"
   }
 }

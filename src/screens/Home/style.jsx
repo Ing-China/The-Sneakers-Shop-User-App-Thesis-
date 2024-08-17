@@ -3,16 +3,18 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import {Colors, Fonts, Sizes} from '../../constants';
 
 const styles = StyleSheet.create({
-  imgContainer: {
-    width: wp('100%'),
-    height: hp('25%'),
+  safeContainer: {
+    flex: 1,
+    backgroundColor: Colors.WHITE,
   },
-  image: {
-    height: hp('25%'),
-    width: wp('100%'),
-    resizeMode: 'stretch',
+  recomLabel: {
+    padding: 15,
+    fontSize: Sizes.TWENTY,
+    fontFamily: Fonts.SEMIBOLD,
+    color: Colors.BLACK,
   },
 });
 

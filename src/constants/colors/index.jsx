@@ -3,4 +3,5 @@ export default class Colors {
   static BLACK = '#000000';
   static WHITE = '#FFFFFF';
   static SILVER = 'silver';
+  static LIGHTSILVER = '#EAECEF';
 }

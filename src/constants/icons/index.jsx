@@ -15,6 +15,12 @@ import uk from '../../assets/icons/uk.svg';
 import check from '../../assets/icons/check.svg';
 import logo from '../../assets/icons/logo.svg';
 import copyright from '../../assets/icons/copyright.svg';
+import discount from '../../assets/icons/discount.svg';
+import active from '../../assets/icons/active.svg';
+import search from '../../assets/icons/search.svg';
+import google from '../../assets/icons/google_icon.svg';
+import eye from '../../assets/icons/eye_open.svg';
+import eyeclose from '../../assets/icons/eye_close.svg';
 
 export default class Icons {
   static HOME = props => <HomeIcon {...props} />;
@@ -33,4 +39,10 @@ export default class Icons {
   static CHECK = check;
   static LOGO = logo;
   static COPYRIGHT = copyright;
+  static DISCOUNT = discount;
+  static ACTIVE = active;
+  static Search = search;
+  static GOOGLE = google;
+  static EYECLOSE = eyeclose;
+  static EYEOPEN = eye;
 }

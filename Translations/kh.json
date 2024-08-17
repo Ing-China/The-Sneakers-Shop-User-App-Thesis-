@@ -2,16 +2,66 @@
   "account": {
     "Choose Language": "ជ្រើសរើសភាសា",
     "ភាសាខ្មែរ": "ភាសាខ្មែរ",
-    "ភាសាអង់គ្លេស": "ភាសាអង់គ្លេស"
+    "ភាសាអង់គ្លេស": "ភាសាអង់គ្លេស",
+    "About Us": "អំពីពួកយើង",
+    "Sign Out": "ចាកចេញ",
+    "Setting": "ការកំណត់",
+    "Language": "ភាសា",
+    "Favorites": "បញ្ជីទំនិញចូលចិត្ត",
+    "Buying": "ការបញ្ជាទិញ",
+    "Profile": "ប្រវត្តិរូប"
   },
   "tab": {
     "Account": "គណនី",
     "Back": "ត្រលប់",
     "Settings": "ការកំណត់",
-    "Address": "អាស័យដ្ឋាន"
+    "Address": "អាស័យដ្ឋាន",
+    "Favorite": "បញ្ជីទំនិញចូលចិត្ត",
+    "Notification": "ការជូនដំណឹង",
+    "Buying": "ការបញ្ជាទិញ",
+    "Profile": "ប្រវត្តិរូប"
   },
   "startUp": {
     "Version": "កំណែ",
     "Powered by": "ដំណើរការដោយ"
+  },
+  "home": {
+    "Recommended For You": "បានណែនាំសម្រាប់អ្នក",
+    "Shop By Category": "ទិញទំនិញតាមប្រភេទ",
+    "Recently Viewed": "បានមើលថ្មីៗនេះ",
+    "Popular Brands": "ម៉ាកល្បីៗ"
+  },
+  "search": {
+    "Find your favourite one": "ស្វែងរកមួយដែលអ្នកចូលចិត្ត"
+  },
+  "buying": {
+    "Orders": "ការបញ្ជាទិញ",
+    "History": "ប្រវត្តិការបញ្ជាទិញ"
+  },
+  "signin": {
+    "Sign In": "ចូលគណនី",
+    "Phone Number": "លេខទូរស័ព្ទ",
+    "Password": "ពាក្យសម្ងាត់",
+    "Forgot Password?": "ភ្លេចលេខសម្ងាត់?",
+    "Log in": "ចូល",
+    "Or Login with": "ឬចូលជាមួយ",
+    "Sign in with Google": "ចូលជាមួយ Google",
+    "Don't have an account?": "មិនមានគណនីមែនទេ?",
+    "SignUp": " ចុះឈ្មោះ"
+  },
+  "signup": {
+    "Sign Up": "ចុះឈ្មោះ",
+    "Name": "ឈ្មោះ",
+    "Phone Number": "លេខទូរស័ព្ទ",
+    "Password": "ពាក្យសម្ងាត់",
+    "Confirm Password": "បញ្ជាក់ពាក្យសម្ងាត់",
+    "Log In": "ចូលគណនី",
+    "Already have an account?": "មានគណនីរួចហើយ?"
+  },
+  "otp": {
+    "Verification code": "លេខកូដផ្ទៀងផ្ទាត់",
+    "Resend": " ផ្ញើឡើងវិញ",
+    "Didn't Received the code?": "មិនទទួលលេខកូដមែនទេ?",
+    "We've send an SMS with an activation code to your phone number +855": "យើងបានផ្ញើសារ SMS ជាមួយនឹងលេខកូដធ្វើឱ្យសកម្មទៅកាន់លេខទូរស័ព្ទរបស់អ្នក +855"
   }
 }
