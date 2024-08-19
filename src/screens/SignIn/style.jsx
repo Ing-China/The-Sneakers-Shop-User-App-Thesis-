@@ -100,12 +100,20 @@ const styles = StyleSheet.create({
   btnLogin: {
     marginHorizontal: 15,
     padding: 10,
-    borderRadius: 10,
     color: Colors.WHITE,
     backgroundColor: Colors.BLACK,
     textAlign: 'center',
     fontFamily: Fonts.MEDIUM,
     fontSize: Sizes.EIGHTEEN,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 1.41,
+
+    elevation: 2,
   },
   containerLine: {
     flexDirection: 'row',
@@ -130,7 +138,6 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.WHITE,
     marginHorizontal: 15,
     padding: 10,
-    borderRadius: 10,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,

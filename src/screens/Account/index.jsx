@@ -123,7 +123,8 @@ export default function Account() {
         index={0}
         snapPoints={snapPoints}
         backdropComponent={renderBackdrop}
-        onChange={handleSheetChanges}>
+        onChange={handleSheetChanges}
+        backgroundStyle={{borderRadius: null}}>
         <BottomSheetView style={styles.contentContainer}>
           <Text style={styles.langLabel}>{t('account.Choose Language')}</Text>
           <SettingTouchable onPress={switchToKhmer}>

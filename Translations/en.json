@@ -5,11 +5,17 @@
     "ភាសាអង់គ្លេស": "English",
     "About Us": "About Us",
     "Sign Out": "Sign Out",
-    "Setting": "Setting",
+    "Setting": "Settings",
     "Language": "Language",
     "Favorites": "Favorites",
     "Buying": "Buying",
-    "Profile": "Profile"
+    "Profile": "Profile",
+    "Notification": "Notification",
+    "Delete My Account": "Delete My Account",
+    "Are you sure?": "Are you sure?",
+    "We're sorry to see you go! Deleting your account is a permanent action that will erase all your data, including your profile and purchase history. This process is irreversible, so please confirm if you are sure you want to proceed.?": "We're sorry to see you go! Deleting your account is a permanent action that will erase all your data, including your profile and purchase history. This process is irreversible, so please confirm if you are sure you want to proceed.?",
+    "Cancel": "Cancel",
+    "Confirm Delete": "Confirm Delete"
   },
   "tab": {
     "Account": "Account",

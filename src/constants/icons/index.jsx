@@ -22,6 +22,7 @@ import google from '../../assets/icons/google_icon.svg';
 import eye from '../../assets/icons/eye_open.svg';
 import eyeclose from '../../assets/icons/eye_close.svg';
 import arrow_right from '../../assets/icons/Arrow.svg';
+import deleteicon from '../../assets/icons/delete.svg';
 
 export default class Icons {
   static HOME = props => <HomeIcon {...props} />;
@@ -47,4 +48,5 @@ export default class Icons {
   static EYECLOSE = eyeclose;
   static EYEOPEN = eye;
   static RIGHTARROW = arrow_right;
+  static DELETEICON = deleteicon;
 }

@@ -9,7 +9,11 @@
     "Language": "ភាសា",
     "Favorites": "បញ្ជីទំនិញចូលចិត្ត",
     "Buying": "ការបញ្ជាទិញ",
-    "Profile": "ប្រវត្តិរូប"
+    "Profile": "ប្រវត្តិរូប",
+    "Notification": "ការជូនដំណឹង",
+    "Delete My Account": "លុបគណនីរបស់ខ្ញុំ",
+    "Are you sure?": "តើអ្នកប្រាកដទេ?",
+    "We're sorry to see you go! Deleting your account is a permanent action that will erase all your data, including your profile and purchase history. This process is irreversible, so please confirm if you are sure you want to proceed.?": "យើង​សុំទោស​ដែល​ឃើញ​អ្នក​ទៅ! ការលុបគណនីរបស់អ្នកគឺជាសកម្មភាពអចិន្ត្រៃយ៍ដែលនឹងលុបទិន្នន័យរបស់អ្នកទាំងអស់ រួមទាំងប្រវត្តិរូប និងប្រវត្តិការទិញរបស់អ្នក។ ដំណើរការនេះមិនអាចត្រឡប់វិញបានទេ ដូច្នេះសូមបញ្ជាក់ប្រសិនបើអ្នកប្រាកដថាអ្នកចង់បន្ត។"
   },
   "tab": {
     "Account": "គណនី",
