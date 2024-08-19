@@ -5,18 +5,18 @@ import Swiper from 'react-native-swiper';
 import {CachedImage} from '@georstat/react-native-image-cache';
 import LoadingImage from '../LoadingImage';
 
-export default function SliderComponent({sliders}) {
+export default function BigSliderComponent({bigsliders}) {
   return (
     <View style={styles.imageContainer}>
       <Swiper showsPagination={false} autoplay={true} autoplayTimeout={5}>
-        {sliders.map((item, index) => (
+        {bigsliders.map((item, index) => (
           <View key={index}>
             <CachedImage
               style={styles.image}
               resizeMode="cover"
               source={item.imageUrl}
               loadingImageComponent={() => (
-                <LoadingImage style={{height: 150, width: 150}} />
+                <LoadingImage style={{height: 200, width: 200}} />
               )}
             />
           </View>
