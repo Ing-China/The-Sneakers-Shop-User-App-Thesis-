@@ -2,6 +2,7 @@ import React from 'react';
 import HomeIcon from '../../assets/icons/home_icon.svg';
 import SearchIcon from '../../assets/icons/search_icon.svg';
 import FavoriteIcon from '../../assets/icons/favorite_icon.svg';
+import FavoriteIconFill from '../../assets/icons/favorite_icon_fill.svg';
 import NotificationIcon from '../../assets/icons/notification_icon.svg';
 import UserIcon from '../../assets/icons/user.svg';
 import ArrowRight from '../../assets/icons/arrow_right.svg';
@@ -28,6 +29,7 @@ export default class Icons {
   static HOME = props => <HomeIcon {...props} />;
   static SEARCH = props => <SearchIcon {...props} />;
   static FAVORITE = props => <FavoriteIcon {...props} />;
+  static FAVORITEFILL = props => <FavoriteIconFill {...props} />;
   static NOTIFICATION = props => <NotificationIcon {...props} />;
   static USER = props => <UserIcon {...props} />;
   static ARROWRIGHT = ArrowRight;

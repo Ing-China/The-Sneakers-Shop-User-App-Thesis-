@@ -32,7 +32,7 @@ export default function CartItem({product, onLayout, containerStyle}) {
         <View style={styles.favoriteWrapper}>
           <Touchable onPress={toggleFavorite}>
             {isFavorite ? (
-              <Icons.FAVORITE
+              <Icons.FAVORITEFILL
                 style={styles.favorite}
                 width={24}
                 height={24}

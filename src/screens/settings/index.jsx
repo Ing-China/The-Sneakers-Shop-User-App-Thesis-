@@ -1,4 +1,4 @@
-import {View, Text, ScrollView} from 'react-native';
+import {View, Text, ScrollView, Button} from 'react-native';
 import React, {useCallback, useMemo, useRef} from 'react';
 import {
   BottomSheetBackdrop,
@@ -20,7 +20,7 @@ export default function Settings() {
   const bottomSheetModalRef = useRef(null);
 
   // variables
-  const snapPoints = useMemo(() => ['27%'], []);
+  const snapPoints = useMemo(() => ['35%'], []);
 
   // callbacks
   const handlePresentModalPress = useCallback(() => {
@@ -73,19 +73,30 @@ export default function Settings() {
         backgroundStyle={{borderRadius: null}}>
         <BottomSheetView style={styles.contentContainer}>
           <Text style={styles.label}>{t('account.Are you sure?')}</Text>
-          <Text style={styles.langLabel}>
+          <View style={styles.line}></View>
+          <Text style={styles.text}>
             {t(
               "account.We're sorry to see you go! Deleting your account is a permanent action that will erase all your data, including your profile and purchase history. This process is irreversible, so please confirm if you are sure you want to proceed.?",
             )}
           </Text>
+          <View style={styles.line}></View>
 
           <View style={styles.btnContainer}>
-            <SettingTouchable onPress={() => ''}>
-              <Text>{t('account.Cancel')}</Text>
-            </SettingTouchable>
-            <SettingTouchable onPress={() => ''}>
-              <Text>{t('account.Confirm Delete')}</Text>
-            </SettingTouchable>
+            <View style={styles.buttonWhite}>
+              <SettingTouchable
+                onPress={() => {
+                  bottomSheetModalRef.current?.close();
+                }}>
+                <Text style={styles.cancel}>{t('account.Cancel')}</Text>
+              </SettingTouchable>
+            </View>
+            <View style={styles.buttonBlack}>
+              <SettingTouchable>
+                <Text style={styles.confirm}>
+                  {t('account.Confirm Delete')}
+                </Text>
+              </SettingTouchable>
+            </View>
           </View>
         </BottomSheetView>
       </BottomSheetModal>
