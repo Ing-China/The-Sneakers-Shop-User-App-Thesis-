@@ -1,4 +1,4 @@
-import {View, Text, ScrollView, Button} from 'react-native';
+import {View, Text, ScrollView, Button, SafeAreaView} from 'react-native';
 import React, {useCallback, useMemo, useRef, useState} from 'react';
 import SettingTouchable from '../../components/Account/index';
 import {Colors, Icons} from '../../constants';
@@ -14,6 +14,10 @@ import {setToggleLanguage} from '../../store/action/settings';
 import {useDispatch} from 'react-redux';
 import {useSettings} from '../../hooks';
 import {navigate} from '../../navigations/RootNavigation';
+import {CachedImage} from '@georstat/react-native-image-cache';
+
+import profile from '../../data/profile';
+import LoadingImage from '../../components/LoadingImage';
 
 export default function Account() {
   const bottomSheetModalRef = useRef(null);
@@ -52,8 +56,27 @@ export default function Account() {
     ),
     [],
   );
+
+  //UI KIT
   return (
     <ScrollView style={styles.container}>
+      <SafeAreaView>
+        <View style={styles.profileContainer}>
+          <View style={styles.imageContainer}>
+            <CachedImage
+              style={styles.image}
+              resizeMode="cover"
+              imageStyle={{borderRadius: 100}}
+              source={profile.imageUrl}
+              loadingImageComponent={() => (
+                <LoadingImage style={{height: 90, width: 90}} />
+              )}
+            />
+          </View>
+          <Text style={styles.name}>{profile.name}</Text>
+        </View>
+      </SafeAreaView>
+
       <SettingTouchable onPress={() => navigate('Profile')}>
         <View style={styles.settingContainer}>
           <View style={styles.settingWrapper}>

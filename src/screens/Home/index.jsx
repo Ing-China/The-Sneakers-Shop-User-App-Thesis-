@@ -194,7 +194,6 @@ export default function Home() {
           numColumns={2}
           showsVerticalScrollIndicator={false}
           ItemSeparatorComponent={() => <View style={{height: 20}} />}
-          ListHeaderComponent={<View style={{height: 15}} />}
           ListFooterComponent={<View style={{height: 15}} />}
         />
       </ScrollView>

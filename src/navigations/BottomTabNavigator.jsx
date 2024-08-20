@@ -119,23 +119,24 @@ export default function BottomTabNavigator() {
         component={Account}
         options={({route}) => ({
           title: t('tab.Account'),
-          headerTitleAlign: 'left',
-          headerTitleStyle: {
-            fontSize: Sizes.TWENTYFIVE,
-            color: Colors.BLACK,
-            fontFamily: Fonts.MEDIUM,
-          },
-          headerStyle: {
-            shadowColor: '#000',
-            shadowOffset: {
-              width: 0,
-              height: 1,
-            },
-            shadowOpacity: 0.18,
-            shadowRadius: 1.0,
+          // headerTitleAlign: 'left',
+          headerShown: false,
+          // headerTitleStyle: {
+          //   fontSize: Sizes.TWENTYFIVE,
+          //   color: Colors.BLACK,
+          //   fontFamily: Fonts.MEDIUM,
+          // },
+          // headerStyle: {
+          //   shadowColor: '#000',
+          //   shadowOffset: {
+          //     width: 0,
+          //     height: 1,
+          //   },
+          //   shadowOpacity: 0.18,
+          //   shadowRadius: 1.0,
 
-            elevation: 1,
-          },
+          //   elevation: 1,
+          // },
           tabBarIcon: ({focused, size}) => (
             <Icons.USER
               width={size}
