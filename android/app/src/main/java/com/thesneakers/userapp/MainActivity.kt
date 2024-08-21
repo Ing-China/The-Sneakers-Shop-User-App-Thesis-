@@ -1,4 +1,4 @@
-package com.nothing
+package com.thesneakers.userapp
 
 import com.facebook.react.ReactActivity
 import android.os.Bundle;
@@ -13,7 +13,7 @@ class MainActivity : ReactActivity() {
    * Returns the name of the main component registered from JavaScript. This is used to schedule
    * rendering of the component.
    */
-  override fun getMainComponentName(): String = "nothing" 
+  override fun getMainComponentName(): String = "The Sneakers" 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(null)
   }

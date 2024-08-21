@@ -1,4 +1,4 @@
-package com.nothing
+package com.thesneakers.userapp
 
 import android.app.Application
 import com.facebook.react.PackageList

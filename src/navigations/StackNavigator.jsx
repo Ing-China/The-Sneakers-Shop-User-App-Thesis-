@@ -78,6 +78,11 @@ export default function StackNavigator() {
         component={AboutUs}
         options={{
           title: null,
+          headerStyle: {
+            shadowColor: 'transparent',
+            elevation: 0,
+          },
+          headerShadowVisible: false,
         }}
       />
       <Stack.Screen

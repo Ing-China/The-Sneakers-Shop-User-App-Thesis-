@@ -1,4 +1,4 @@
-import {View, Text, ScrollView, Button} from 'react-native';
+import {View, Text, ScrollView, Button, Linking} from 'react-native';
 import React, {useCallback, useMemo, useRef} from 'react';
 import {
   BottomSheetBackdrop,
@@ -43,7 +43,10 @@ export default function Settings() {
 
   return (
     <ScrollView style={styles.container}>
-      <SettingTouchable onPress={() => ''}>
+      <SettingTouchable
+        onPress={() => {
+          Linking.openSettings();
+        }}>
         <View style={styles.settingContainer}>
           <View style={styles.settingWrapper}>
             <Icons.NOTIFICATION width={24} height={24} color={Colors.BLACK} />

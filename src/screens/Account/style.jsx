@@ -8,6 +8,30 @@ import {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#FFFFFF',
+    paddingTop: Platform.OS === 'android' ? 0 : 30,
+  },
+  profileContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 20,
+  },
+
+  imageContainer: {
+    height: 160,
+    width: 160,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'relative',
+  },
+  image: {
+    height: 160,
+    width: 160,
+  },
+  name: {
+    fontFamily: Fonts.SEMIBOLD,
+    fontSize: Sizes.TWENTY,
+    marginTop: 10,
+    color: Colors.BLACK,
   },
   settingContainer: {
     padding: 20,
@@ -54,27 +78,6 @@ const styles = StyleSheet.create({
     fontFamily: Fonts.REGULAR,
     fontSize: Sizes.TWENTY,
     color: Colors.BLACK,
-  },
-
-  profileContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  imageContainer: {
-    height: hp('16%'),
-    width: wp('40%'),
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 90,
-  },
-  image: {
-    height: hp('16%'),
-    width: wp('35%'),
-  },
-  name: {
-    fontFamily: Fonts.SEMIBOLD,
-    fontSize: Sizes.TWENTY,
   },
 });
 

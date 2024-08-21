@@ -73,5 +73,13 @@
     "Resend": " Resend",
     "Didn't Received the code?": "Didn't Received the code?",
     "We've send an SMS with an activation code to your phone number +855": "We've send an SMS with an activation code to your phone number +855"
+  },
+  "profile": {
+    "Name": "Name",
+    "Phone Number": "Phone Number",
+    "Email": "Email",
+    "Old Password": "Old Password",
+    "New Password": "New Password",
+    "Save": "Save"
   }
 }

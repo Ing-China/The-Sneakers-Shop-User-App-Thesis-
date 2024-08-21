@@ -74,13 +74,14 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.nothing"
+    namespace "com.thesneakers.userapp"
     defaultConfig {
-        applicationId "com.nothing"
+        applicationId "com.thesneakers.userapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
     }
     signingConfigs {
         debug {

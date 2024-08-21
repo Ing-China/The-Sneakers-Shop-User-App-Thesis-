@@ -59,23 +59,21 @@ export default function Account() {
 
   //UI KIT
   return (
-    <ScrollView style={styles.container}>
-      <SafeAreaView>
-        <View style={styles.profileContainer}>
-          <View style={styles.imageContainer}>
-            <CachedImage
-              style={styles.image}
-              resizeMode="cover"
-              imageStyle={{borderRadius: 100}}
-              source={profile.imageUrl}
-              loadingImageComponent={() => (
-                <LoadingImage style={{height: 90, width: 90}} />
-              )}
-            />
-          </View>
-          <Text style={styles.name}>{profile.name}</Text>
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+      <View style={styles.profileContainer}>
+        <View style={styles.imageContainer}>
+          <CachedImage
+            style={styles.image}
+            resizeMode="cover"
+            imageStyle={{borderRadius: 100}}
+            source={profile.imageUrl}
+            loadingImageComponent={() => (
+              <LoadingImage style={{height: 90, width: 90}} />
+            )}
+          />
         </View>
-      </SafeAreaView>
+        <Text style={styles.name}>{profile.name}</Text>
+      </View>
 
       <SettingTouchable onPress={() => navigate('Profile')}>
         <View style={styles.settingContainer}>
@@ -95,7 +93,7 @@ export default function Account() {
           <Icons.ARROWRIGHT width={18} height={18} />
         </View>
       </SettingTouchable>
-      <SettingTouchable onPress={() => ''}>
+      <SettingTouchable onPress={() => navigate('Favorite')}>
         <View style={styles.settingContainer}>
           <View style={styles.settingWrapper}>
             <Icons.FAVORITE width={24} height={24} color={Colors.BLACK} />

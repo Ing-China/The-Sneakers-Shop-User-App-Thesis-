@@ -24,6 +24,7 @@ import eye from '../../assets/icons/eye_open.svg';
 import eyeclose from '../../assets/icons/eye_close.svg';
 import arrow_right from '../../assets/icons/Arrow.svg';
 import deleteicon from '../../assets/icons/delete.svg';
+import UserEdit from '../../assets/icons/user-edit.svg';
 
 export default class Icons {
   static HOME = props => <HomeIcon {...props} />;
@@ -32,6 +33,8 @@ export default class Icons {
   static FAVORITEFILL = props => <FavoriteIconFill {...props} />;
   static NOTIFICATION = props => <NotificationIcon {...props} />;
   static USER = props => <UserIcon {...props} />;
+  static USEREDIT = props => <UserEdit {...props} />;
+
   static ARROWRIGHT = ArrowRight;
   static SETTING = Setting;
   static LOGOUT = logout;

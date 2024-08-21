@@ -1,4 +1,12 @@
-import {View, Text, ScrollView, Image, TextInput} from 'react-native';
+import {
+  View,
+  Text,
+  ScrollView,
+  Image,
+  TextInput,
+  KeyboardAvoidingView,
+  Platform,
+} from 'react-native';
 import React, {useState} from 'react';
 import styles from './style';
 import {Icons} from '../../constants';
@@ -36,7 +44,9 @@ export default function SignIn() {
     }
   };
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView
+      style={styles.container}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.imageWrapper}>
           <Image
@@ -122,6 +132,6 @@ export default function SignIn() {
           </Touchable>
         </View>
       </ScrollView>
-    </View>
+    </KeyboardAvoidingView>
   );
 }
