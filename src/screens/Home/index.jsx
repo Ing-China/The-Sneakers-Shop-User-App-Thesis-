@@ -179,7 +179,7 @@ export default function Home() {
 
         <Text style={styles.recomLabel}>{t('home.All Product')}</Text>
 
-        <FlatList
+        {/* <FlatList
           data={product}
           renderItem={({item, index}) => (
             <CartItem
@@ -195,7 +195,7 @@ export default function Home() {
           showsVerticalScrollIndicator={false}
           ItemSeparatorComponent={() => <View style={{height: 20}} />}
           ListFooterComponent={<View style={{height: 15}} />}
-        />
+        /> */}
       </ScrollView>
     </SafeAreaView>
   );

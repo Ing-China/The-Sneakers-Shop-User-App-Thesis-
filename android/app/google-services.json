@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "892546604100",
+    "project_id": "thesneakers-b3c8f",
+    "storage_bucket": "thesneakers-b3c8f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892546604100:android:bfbd2a868d3524d9b17011",
+        "android_client_info": {
+          "package_name": "com.thesneakers.userapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "892546604100-698ep73skfrf3262ishoh2con6s7oumg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.thesneakers.userapp",
+            "certificate_hash": "da1ea87e82ad7c57bbe25078090c5492d2ac9340"
+          }
+        },
+        {
+          "client_id": "892546604100-m15fphj8imrh79sf1c7mtcir02a0jv2u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.thesneakers.userapp",
+            "certificate_hash": "44bc77e1295d0ba7e43b7db76af257d3af856e41"
+          }
+        },
+        {
+          "client_id": "892546604100-dqcisdb7r0qbrhmqv4af8dq1hqbaa3eb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwZwBdViYXUX8z02TpyOYyjVYJs1vaJ7s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "892546604100-dqcisdb7r0qbrhmqv4af8dq1hqbaa3eb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "892546604100-88pm4g0mdjll1pr7121p7snhn8i8ppfu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.thesneakers.userapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -66,13 +66,19 @@
     "Password": "Password",
     "Confirm Password": "Confirm Password",
     "Log In": "Log In",
-    "Already have an account?": "Already have an account?"
+    "Already have an account?": "Already have an account?",
+    "Passwords do not match": "Passwords do not match"
   },
   "otp": {
     "Verification code": "Verification code",
     "Resend": " Resend",
-    "Didn't Received the code?": "Didn't Received the code?",
-    "We've send an SMS with an activation code to your phone number +855": "We've send an SMS with an activation code to your phone number +855"
+    "Did not receive the code?": "Didn't receive the code? ",
+    "We have sent an SMS with an activation code to your phone number": "We've sent an SMS with an activation code to your phone number ",
+    "OK": "OK",
+    "Input Problem": "Input Problem",
+    "The OTP you entered should be 6 digits long. Please check and try again.": "The OTP you entered should be 6 digits long. Please check and try again.",
+    "Check OTP": "Check OTP",
+    "The OTP you entered is incorrect. Please enter a valid 6-digit OTP.": "The OTP you entered is incorrect. Please enter a valid 6-digit OTP."
   },
   "profile": {
     "Name": "Name",

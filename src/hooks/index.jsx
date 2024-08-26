@@ -1,3 +1,3 @@
 import useSettings from './useSettings';
-
-export {useSettings};
+import useCountdownResendOTPTimer from './useCountdownResendOTPTimer';
+export {useSettings, useCountdownResendOTPTimer};

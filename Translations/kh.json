@@ -66,13 +66,19 @@
     "Password": "ពាក្យសម្ងាត់",
     "Confirm Password": "បញ្ជាក់ពាក្យសម្ងាត់",
     "Log In": "ចូលគណនី",
-    "Already have an account?": "មានគណនីរួចហើយ?"
+    "Already have an account?": "មានគណនីរួចហើយ?",
+    "Passwords do not match": "ពាក្យសម្ងាត់មិនត្រូវគ្នាទេ"
   },
   "otp": {
     "Verification code": "លេខកូដផ្ទៀងផ្ទាត់",
     "Resend": " ផ្ញើឡើងវិញ",
-    "Didn't Received the code?": "មិនទទួលលេខកូដមែនទេ?",
-    "We've send an SMS with an activation code to your phone number +855": "យើងបានផ្ញើសារ SMS ជាមួយនឹងលេខកូដធ្វើឱ្យសកម្មទៅកាន់លេខទូរស័ព្ទរបស់អ្នក +855"
+    "Did not receive the code?": "មិនបានទទួលលេខកូដទេ? ",
+    "We have sent an SMS with an activation code to your phone number": "យើងបានផ្ញើសារ SMS ជាមួយនឹងលេខកូដធ្វើឱ្យសកម្មទៅកាន់លេខទូរស័ព្ទរបស់អ្នក ",
+    "OK": "យល់ព្រម",
+    "Input Problem": "បញ្ហាបញ្ចូល",
+    "The OTP you entered should be 6 digits long. Please check and try again.": "លេខកូដ ដែលអ្នកបានបញ្ចូលគួរតែមាន 6 ខ្ទង់។ សូមពិនិត្យមើល ហើយព្យាយាមម្តងទៀត។",
+    "Check OTP": "សូមពិនិត្យលេខកូដ",
+    "The OTP you entered is incorrect. Please enter a valid 6-digit OTP.": "លេខកូដ ដែលអ្នកបានបញ្ចូលមិនត្រឹមត្រូវទេ។ សូមបញ្ចូល លេខកូដ 6 ខ្ទង់ត្រឹមត្រូវ។"
   },
   "profile": {
     "Name": "ឈ្មោះ",

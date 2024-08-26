@@ -1,4 +1,4 @@
-import {View, useWindowDimensions} from 'react-native';
+import {useWindowDimensions} from 'react-native';
 
 import React from 'react';
 import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
