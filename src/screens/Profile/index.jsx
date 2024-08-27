@@ -1,12 +1,5 @@
 import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  TextInput,
-  ScrollView,
-  Platform,
-  PermissionsAndroid,
-} from 'react-native';
+import {View, ScrollView} from 'react-native';
 import styles from './style';
 import {CachedImage} from '@georstat/react-native-image-cache';
 import profile from '../../data/profile';
@@ -15,11 +8,23 @@ import {Colors, Icons} from '../../constants';
 import {useTranslation} from 'react-i18next';
 import Touchable from '../../components/Account/index';
 import ImagePicker from 'react-native-image-crop-picker';
+import PrimaryButton from '../../components/PrimaryButton';
+import PrimaryInput from '../../components/PrimaryInput';
+import {useToggle} from '../../hooks';
 
 export default function Profile() {
-  const {t} = useTranslation();
-  const [name, setName] = useState('');
+  //STATE
   const [imageUrl, setImageUrl] = useState(profile.imageUrl);
+  const [name, setName] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [email, setEmail] = useState('');
+  const [oldPassword, setOldPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+
+  //HOOKS
+  const {t} = useTranslation();
+  const [isVisible1, toggleVisibility1] = useToggle();
+  const [isVisible2, toggleVisibility2] = useToggle();
 
   const openImagePicker = async () => {
     try {
@@ -56,55 +61,53 @@ export default function Profile() {
           </View>
         </View>
 
-        <Text style={styles.inputLabel}>{t('profile.Name')}</Text>
-        <View style={styles.nameContainer}>
-          <TextInput
-            placeholder={t('profile.Name')}
-            value={name}
-            onChangeText={setName}
-            style={styles.input}
-          />
-        </View>
-        <Text style={styles.inputLabel}>{t('profile.Phone Number')}</Text>
-        <View style={styles.nameContainer}>
-          <TextInput
-            placeholder={t('profile.Phone Number')}
-            value={name}
-            onChangeText={setName}
-            style={styles.input}
-          />
-        </View>
-        <Text style={styles.inputLabel}>{t('profile.Email')}</Text>
-        <View style={styles.nameContainer}>
-          <TextInput
-            placeholder={t('profile.Email')}
-            value={name}
-            onChangeText={setName}
-            style={styles.input}
-          />
-        </View>
-        <Text style={styles.inputLabel}>{t('profile.Old Password')}</Text>
-        <View style={styles.nameContainer}>
-          <TextInput
-            placeholder={t('profile.Old Password')}
-            value={name}
-            onChangeText={setName}
-            style={styles.input}
-          />
-        </View>
-        <Text style={styles.inputLabel}>{t('profile.New Password')}</Text>
-        <View style={styles.nameContainer}>
-          <TextInput
-            placeholder={t('profile.New Password')}
-            value={name}
-            onChangeText={setName}
-            style={styles.input}
-          />
-        </View>
+        <PrimaryInput
+          label={t('profile.Name')}
+          value={name}
+          onChangeText={setName}
+          placeholder={t('profile.Name')}
+        />
 
-        <Touchable>
-          <Text style={styles.btnLogin}>{t('profile.Save')}</Text>
-        </Touchable>
+        <PrimaryInput
+          label={t('profile.Phone Number')}
+          value={phoneNumber}
+          onChangeText={setPhoneNumber}
+          placeholder={t('profile.Phone Number')}
+        />
+
+        <PrimaryInput
+          label={t('profile.Email')}
+          value={email}
+          onChangeText={setEmail}
+          placeholder={t('profile.Email')}
+        />
+
+        <PrimaryInput
+          label={t('profile.Old Password')}
+          value={oldPassword}
+          onChangeText={setOldPassword}
+          placeholder={t('profile.Old Password')}
+          secureTextEntry={true}
+          showPassword={isVisible1}
+          toggleShowPassword={toggleVisibility1}
+          withEyeIcon={true}
+        />
+
+        <PrimaryInput
+          label={t('profile.New Password')}
+          value={newPassword}
+          onChangeText={setNewPassword}
+          placeholder={t('profile.New Password')}
+          secureTextEntry={true}
+          showPassword={isVisible2}
+          toggleShowPassword={toggleVisibility2}
+          withEyeIcon={true}
+        />
+
+        <PrimaryButton
+          title={t('profile.Save')}
+          containerStyle={styles.primaryButton}
+        />
       </ScrollView>
     </View>
   );

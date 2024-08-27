@@ -25,9 +25,6 @@ const styles = StyleSheet.create({
     color: Colors.BLACK,
     fontSize: Sizes.THIRDTY,
   },
-  Wrapper: {
-    paddingHorizontal: 15,
-  },
   inputLabel: {
     marginVertical: 10,
     fontFamily: Fonts.REGULAR,
@@ -66,29 +63,6 @@ const styles = StyleSheet.create({
   phoneNumber: {
     flex: 0.7,
   },
-  input2Container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: 1,
-    borderRadius: 5,
-    height: hp('5.5%'),
-    borderColor: Colors.SILVER,
-  },
-  inputError: {
-    color: 'red',
-    borderColor: 'red',
-  },
-  password: {
-    flex: 1,
-    fontFamily: Fonts.REGULAR,
-    color: Colors.BLACK,
-    fontSize: Sizes.EIGHTEEN,
-    padding: 10,
-  },
-  icon: {
-    marginRight: 10,
-  },
   forgotPass: {
     alignSelf: 'flex-end',
     paddingHorizontal: 15,
@@ -97,23 +71,8 @@ const styles = StyleSheet.create({
     color: Colors.BLACK,
     fontSize: Sizes.EIGHTEEN,
   },
-  btnLogin: {
-    marginHorizontal: 15,
-    padding: 10,
-    color: Colors.WHITE,
-    backgroundColor: Colors.BLACK,
-    textAlign: 'center',
-    fontFamily: Fonts.MEDIUM,
-    fontSize: Sizes.EIGHTEEN,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.2,
-    shadowRadius: 1.41,
-
-    elevation: 2,
+  primaryButton: {
+    paddingTop: 20,
   },
   containerLine: {
     flexDirection: 'row',

@@ -31,6 +31,10 @@ target 'TheSneakers' do
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'Google-Maps-iOS-Utils'
+  pod 'FBSDKCoreKit', '~> 13.0'
+  pod 'FBSDKLoginKit', '~> 13.0'
+  pod 'FBSDKShareKit', '~> 13.0'
+
 
   config = use_native_modules!
 

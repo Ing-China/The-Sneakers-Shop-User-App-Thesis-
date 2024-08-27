@@ -1,73 +1,49 @@
 import {View, Text} from 'react-native';
-import React, {useEffect, useMemo, useState} from 'react';
-import styles from './style';
+import React from 'react';
 import {CachedImage} from '@georstat/react-native-image-cache';
-import {Colors, Icons} from '../../constants';
-
-import Touchable from '../../components/Account/index';
 import LoadingImage from '../LoadingImage';
-
-export default function CartItem({product, onLayout, containerStyle}) {
-  const [isFavorite, setIsFavorite] = useState(false);
-
-  useMemo(() => {
-    setIsFavorite(product.isFavorite);
-  }, [product.isFavorite]);
-
-  const toggleFavorite = () => {
-    setIsFavorite(!isFavorite);
-  };
-
+import {useTranslation} from 'react-i18next';
+import styles from './style';
+import {shadowStyle} from '../../constants/shadow';
+import {Colors, Icons} from '../../constants';
+import CircleButton from '../CircleButton';
+export default function CartItem({cart}) {
+  const {t} = useTranslation();
   return (
-    <Touchable>
-      <View style={[styles.container, containerStyle]} onLayout={onLayout}>
-        <View style={styles.discountWrapper}>
-          <Icons.DISCOUNT style={styles.discount} width={40} height={40} />
-          <View style={styles.discountState}>
-            <Text style={styles.discount}>${product.discountAmount}</Text>
-            <Text style={styles.discount}>OFF</Text>
-          </View>
-        </View>
-
-        <View style={styles.favoriteWrapper}>
-          <Touchable onPress={toggleFavorite}>
-            {isFavorite ? (
-              <Icons.FAVORITEFILL
-                style={styles.favorite}
-                width={24}
-                height={24}
-                fill={Colors.BLACK}
-              />
-            ) : (
-              <Icons.FAVORITE
-                style={styles.favorite}
-                width={24}
-                height={24}
-                color={Colors.BLACK}
-              />
-            )}
-          </Touchable>
-        </View>
-
+    <View style={[styles.container, shadowStyle]}>
+      <View style={styles.imageWrapper}>
         <CachedImage
           style={styles.image}
           resizeMode="contain"
-          source={product.imageUrl}
+          source={cart.imageUrl}
           loadingImageComponent={() => (
             <LoadingImage style={{height: 90, width: 90}} />
           )}
         />
+      </View>
+      <View style={styles.body}>
+        <Text style={styles.name}>{cart.name}</Text>
+        <View style={styles.iconDelete}>
+          <CircleButton icon={<Icons.CARTDELETE />} color={Colors.RED} />
+        </View>
 
-        <Text style={styles.name} numberOfLines={2}>
-          {product.name}
+        <Text style={styles.size}>
+          {t('cart.size')} {cart.size}
         </Text>
-        <View style={styles.priceWrapper}>
-          <Text style={styles.priceAfterDiscount}>
-            ${product.priceAfterDiscount}
-          </Text>
-          <Text style={styles.price}>${product.price}</Text>
+
+        <View style={styles.row}>
+          <Text style={styles.price}>${cart.price}</Text>
+          <Text style={styles.discount}>${cart.price}</Text>
+        </View>
+
+        <View style={styles.quantityWrapper}>
+          <View style={styles.row}>
+            <CircleButton icon={<Icons.MINUS />} color={Colors.LIGHTSILVER} />
+            <Text style={styles.quantity}>{cart.quantity}</Text>
+            <CircleButton icon={<Icons.PLUS />} color={Colors.BLACK} />
+          </View>
         </View>
       </View>
-    </Touchable>
+    </View>
   );
 }

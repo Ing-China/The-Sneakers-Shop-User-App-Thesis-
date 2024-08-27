@@ -1,66 +1,73 @@
-import {Dimensions, StyleSheet} from 'react-native';
-import {Colors, Fonts, Sizes} from '../../constants';
+import {StyleSheet} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-const styles = StyleSheet.create({
+import {Colors, Fonts, Sizes} from '../../constants';
+const style = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  discountWrapper: {
-    position: 'absolute',
-    width: 40,
-    height: 40,
-    alignItems: 'center',
-    justifyContent: 'center',
-    margin: 5,
-  },
-  discountState: {
-    position: 'absolute',
-  },
-  discount: {
-    textAlign: 'center',
-    lineHeight: 12,
-    fontFamily: Fonts.REGULAR,
-    color: Colors.WHITE,
-    fontSize: Sizes.FIFTEEN,
-  },
-  favoriteWrapper: {
     backgroundColor: Colors.WHITE,
-    padding: 5,
-    borderRadius: 50,
-    position: 'absolute',
-    margin: 5,
-    right: 0,
-    zIndex: 1,
+    marginHorizontal: 15,
+    padding: 10,
+    borderRadius: 10,
+    flexDirection: 'row',
+  },
+  imageWrapper: {
+    paddingRight: 5,
+    width: '25%',
+    alignItems: 'center',
+  },
+  body: {
+    width: '75%',
   },
   image: {
-    width: wp('40%'),
-    height: hp('15%'),
+    width: wp('22%'),
+    height: hp('10%'),
   },
   name: {
-    width: wp('35%'),
-    fontFamily: Fonts.SEMIBOLD,
+    width: '90%',
+    paddingBottom: 5,
+    fontFamily: Fonts.MEDIUM,
     fontSize: Sizes.EIGHTEEN,
     color: Colors.BLACK,
   },
-  priceWrapper: {
+  iconDelete: {
+    position: 'absolute',
+    right: 0,
+  },
+  quantityWrapper: {
+    position: 'absolute',
+    right: 0,
+    bottom: 0,
+  },
+  row: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   price: {
-    fontFamily: Fonts.SEMIBOLD,
+    fontFamily: Fonts.MEDIUM,
     fontSize: Sizes.EIGHTEEN,
+    color: Colors.BLACK,
+  },
+  discount: {
+    fontFamily: Fonts.MEDIUM,
+    fontSize: Sizes.SEVENTEEN,
     color: Colors.SILVER,
     textDecorationLine: 'line-through',
+    paddingLeft: 10,
   },
-  priceAfterDiscount: {
-    width: wp('15%'),
-    fontFamily: Fonts.SEMIBOLD,
-    fontSize: Sizes.TWENTYFIVE,
+  quantity: {
+    paddingHorizontal: 10,
+    fontSize: Sizes.SEVENTEEN,
     color: Colors.BLACK,
+  },
+  size: {
+    paddingBottom: 5,
+    fontFamily: Fonts.REGULAR,
+    fontSize: Sizes.SEVENTEEN,
+    color: Colors.SILVER,
   },
 });
 
-export default styles;
+export default style;

@@ -2,7 +2,7 @@ import {View, Text, FlatList} from 'react-native';
 import React from 'react';
 
 import notification from '../../data/notification';
-import NotficationCart from '../../components/NotificationCart';
+import NotficationItem from '../../components/NotificationItem';
 import styles from './style';
 
 export default function Notification() {
@@ -11,7 +11,7 @@ export default function Notification() {
       <FlatList
         data={notification}
         keyExtractor={item => item.id}
-        renderItem={({item}) => <NotficationCart notification={item} />}
+        renderItem={({item}) => <NotficationItem notification={item} />}
         showsVerticalScrollIndicator={false}
       />
     </View>

@@ -1,14 +1,15 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 import styles from './style';
-import Touchable from '../../components/Account/index';
+import Touchable from '../Account/index';
 import {CachedImage} from '@georstat/react-native-image-cache';
 import LoadingImage from '../LoadingImage';
+import {shadowStyle} from '../../constants/shadow';
 
-export default function BuyingCart({order}) {
+export default function BuyingItem({order}) {
   return (
     <Touchable>
-      <View style={styles.container}>
+      <View style={[styles.container, shadowStyle]}>
         <View style={styles.header}>
           <Text style={styles.status}>{order.orderStatus}</Text>
           <Text style={styles.transaction}>{order.transactionDate}</Text>

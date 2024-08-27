@@ -7,8 +7,8 @@ import {useTranslation} from 'react-i18next';
 
 import category from '../../data/category';
 import product from '../../data/product';
-import CategoryTextCart from '../../components/CategoryTextCart';
-import CartItem from '../../components/CartItem';
+import CategoryTextItem from '../../components/CategoryTextItem';
+import ProductItem from '../../components/ProductItem';
 import {WINDOW_WIDTH} from '@gorhom/bottom-sheet';
 
 export default function Search() {
@@ -41,7 +41,7 @@ export default function Search() {
           data={category}
           keyExtractor={item => item.id}
           renderItem={({item}) => (
-            <CategoryTextCart
+            <CategoryTextItem
               category={item}
               isSelected={item.id == selectedCategoryId}
               onPress={() => handleCategoryPress(item.id)}
@@ -55,7 +55,7 @@ export default function Search() {
       <FlatList
         data={product}
         renderItem={({item, index}) => (
-          <CartItem
+          <ProductItem
             product={item}
             containerStyle={{
               width: WINDOW_WIDTH / 2 - 30,

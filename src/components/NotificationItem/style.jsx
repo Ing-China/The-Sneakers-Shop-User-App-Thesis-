@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     width: wp('69%'),
     fontSize: Sizes.EIGHTEEN,
     color: Colors.BLACK,
-    fontFamily: Fonts.SEMIBOLD,
+    fontFamily: Fonts.MEDIUM,
   },
   description: {
     width: wp('69%'),

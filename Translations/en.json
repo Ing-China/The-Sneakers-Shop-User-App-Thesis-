@@ -15,7 +15,8 @@
     "Are you sure?": "Are you sure?",
     "We're sorry to see you go! Deleting your account is a permanent action that will erase all your data, including your profile and purchase history. This process is irreversible, so please confirm if you are sure you want to proceed.?": "We're sorry to see you go! Deleting your account is a permanent action that will erase all your data, including your profile and purchase history. This process is irreversible, so please confirm if you are sure you want to proceed.?",
     "Cancel": "Cancel",
-    "Confirm Delete": "Confirm Delete"
+    "Confirm Delete": "Confirm Delete",
+    "Cart": "Cart"
   },
   "tab": {
     "Account": "Account",
@@ -25,7 +26,8 @@
     "Favorite": "Favorite",
     "Notification": "Notification",
     "Buying": "Buying",
-    "Profile": "Profile"
+    "Profile": "Profile",
+    "Cart": "Cart"
   },
   "startUp": {
     "Version": "Version",
@@ -39,7 +41,8 @@
     "See All Brands": "See All Brands",
     "Trending Sneakers": "Trending Sneakers",
     "See All": "See All",
-    "All Product": "All Product"
+    "All Product": "All Product",
+    "Most Popular Shoes": "Most Popular Shoes"
   },
   "search": {
     "Find your favourite one": "Find your favourite one"
@@ -67,7 +70,8 @@
     "Confirm Password": "Confirm Password",
     "Log In": "Log In",
     "Already have an account?": "Already have an account?",
-    "Passwords do not match": "Passwords do not match"
+    "Passwords do not match": "Passwords do not match",
+    "Verify": "Verify"
   },
   "otp": {
     "Verification code": "Verification code",
@@ -87,5 +91,11 @@
     "Old Password": "Old Password",
     "New Password": "New Password",
     "Save": "Save"
+  },
+  "cart": {
+    "ORDERS": "ORDERS",
+    "Items": "Items",
+    "size": "Size",
+    "Check Out": "Check Out"
   }
 }

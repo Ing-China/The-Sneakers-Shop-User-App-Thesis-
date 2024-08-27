@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {Colors, Fonts, Sizes} from '../../constants';
+import {Colors} from '../../constants';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -32,45 +32,8 @@ const styles = StyleSheet.create({
     padding: 5,
     borderRadius: 100,
   },
-
-  inputLabel: {
-    marginVertical: 10,
-    fontFamily: Fonts.REGULAR,
-    color: Colors.BLACK,
-    fontSize: Sizes.EIGHTEEN,
-    paddingHorizontal: 15,
-  },
-  nameContainer: {
-    paddingHorizontal: 15,
-  },
-  input: {
-    fontFamily: Fonts.REGULAR,
-    color: Colors.BLACK,
-    fontSize: Sizes.EIGHTEEN,
-    padding: 10,
-    borderWidth: 1,
-    borderColor: Colors.SILVER,
-    borderRadius: 5,
-    height: hp('5.5%'),
-  },
-  btnLogin: {
-    marginHorizontal: 15,
-    marginTop: 30,
-    padding: 10,
-    color: Colors.WHITE,
-    backgroundColor: Colors.BLACK,
-    textAlign: 'center',
-    fontFamily: Fonts.MEDIUM,
-    fontSize: Sizes.EIGHTEEN,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.2,
-    shadowRadius: 1.41,
-
-    elevation: 2,
+  primaryButton: {
+    paddingTop: 35,
   },
 });
 

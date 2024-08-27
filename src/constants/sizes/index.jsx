@@ -10,4 +10,5 @@ export default class Sizes {
   static EIGHTEEN = hp('2%');
   static FIFTEEN = hp('1.5%');
   static SIXTEEN = hp('1.7%');
+  static SEVENTEEN = hp('1.8%');
 }

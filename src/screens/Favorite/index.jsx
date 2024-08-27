@@ -1,7 +1,7 @@
 import {View, Text, FlatList} from 'react-native';
 import React from 'react';
 import styles from './style';
-import CartItem from '../../components/CartItem';
+import ProductItem from '../../components/ProductItem';
 import {WINDOW_WIDTH} from '@gorhom/bottom-sheet';
 
 import product from '../../data/product';
@@ -12,7 +12,7 @@ export default function Favorite() {
       <FlatList
         data={product}
         renderItem={({item, index}) => (
-          <CartItem
+          <ProductItem
             product={item}
             containerStyle={{
               width: WINDOW_WIDTH / 2 - 30,

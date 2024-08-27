@@ -25,6 +25,10 @@ import eyeclose from '../../assets/icons/eye_close.svg';
 import arrow_right from '../../assets/icons/Arrow.svg';
 import deleteicon from '../../assets/icons/delete.svg';
 import UserEdit from '../../assets/icons/user-edit.svg';
+import Cart from '../../assets/icons/cart.svg';
+import CartDelete from '../../assets/icons/cart_delete.svg';
+import minus from '../../assets/icons/minus.svg';
+import plus from '../../assets/icons/plus.svg';
 
 export default class Icons {
   static HOME = props => <HomeIcon {...props} />;
@@ -54,4 +58,8 @@ export default class Icons {
   static EYEOPEN = eye;
   static RIGHTARROW = arrow_right;
   static DELETEICON = deleteicon;
+  static CART = Cart;
+  static CARTDELETE = CartDelete;
+  static MINUS = minus;
+  static PLUS = plus;
 }

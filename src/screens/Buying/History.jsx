@@ -2,7 +2,7 @@ import {View, Text, FlatList} from 'react-native';
 import React from 'react';
 import Ordersdata from '../../data/Buying';
 import styles from './style';
-import BuyingCart from '../../components/BuyingCart';
+import BuyingItem from '../../components/BuyingItem';
 
 export default function Orders() {
   return (
@@ -10,7 +10,7 @@ export default function Orders() {
       <FlatList
         data={Ordersdata}
         keyExtractor={item => item.id}
-        renderItem={({item}) => <BuyingCart order={item} />}
+        renderItem={({item}) => <BuyingItem order={item} />}
         showsVerticalScrollIndicator={false}
         ItemSeparatorComponent={() => <View style={{height: 15}} />}
         ListHeaderComponent={() => <View style={{height: 15}} />}

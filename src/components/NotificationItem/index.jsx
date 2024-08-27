@@ -3,9 +3,9 @@ import React from 'react';
 import styles from './style';
 import {CachedImage} from '@georstat/react-native-image-cache';
 import LoadingImage from '../LoadingImage';
-import Touchable from '../../components/Account/index';
+import Touchable from '../Account/index';
 
-export default function NotficationCart({notification}) {
+export default function NotficationItem({notification}) {
   return (
     <Touchable>
       <View style={styles.container}>

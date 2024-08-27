@@ -10,6 +10,7 @@ import Touchable from '../../components/Account/index';
 import {useCountdownResendOTPTimer} from '../../hooks';
 import LoadingModal from '../../components/LoadingModal';
 import Alert from '../../components/Alert';
+import PrimaryButton from '../../components/PrimaryButton';
 
 export default function VerificationOTP() {
   const {t} = useTranslation();
@@ -88,28 +89,30 @@ export default function VerificationOTP() {
   return (
     <View style={styles.container}>
       <SafeAreaView>
-        <Text style={styles.label}>{t('otp.Verification code')}</Text>
-        <Text style={styles.infoLabel}>
-          {t(
-            'otp.We have sent an SMS with an activation code to your phone number',
-          )}
-          {phoneNumber}
-        </Text>
-        <OtpInput
-          numberOfDigits={6}
-          focusColor="black"
-          focusStickBlinkingDuration={500}
-          onTextChange={text => setOtp(text)}
-          textInputProps={{
-            accessibilityLabel: 'One-Time Password',
-          }}
-          theme={{
-            pinCodeContainerStyle: styles.pinCodeContainer,
-            pinCodeTextStyle: styles.pinCodeText,
-            focusStickStyle: styles.focusStick,
-            focusedPinCodeContainerStyle: styles.activePinCodeContainer,
-          }}
-        />
+        <View style={styles.wrapper}>
+          <Text style={styles.label}>{t('otp.Verification code')}</Text>
+          <Text style={styles.infoLabel}>
+            {t(
+              'otp.We have sent an SMS with an activation code to your phone number',
+            )}
+            {phoneNumber}
+          </Text>
+          <OtpInput
+            numberOfDigits={6}
+            focusColor="black"
+            focusStickBlinkingDuration={500}
+            onTextChange={text => setOtp(text)}
+            textInputProps={{
+              accessibilityLabel: 'One-Time Password',
+            }}
+            theme={{
+              pinCodeContainerStyle: styles.pinCodeContainer,
+              pinCodeTextStyle: styles.pinCodeText,
+              focusStickStyle: styles.focusStick,
+              focusedPinCodeContainerStyle: styles.activePinCodeContainer,
+            }}
+          />
+        </View>
 
         <View style={styles.resendWrapper}>
           <Text style={styles.noCode}>
@@ -122,9 +125,11 @@ export default function VerificationOTP() {
           </Touchable>
         </View>
 
-        <Touchable onPress={() => confirmCode()}>
-          <Text style={styles.btnLogin}>{t('signup.Sign Up')}</Text>
-        </Touchable>
+        <PrimaryButton
+          onPress={() => confirmCode()}
+          title={t('signup.Verify')}
+          containerStyle={styles.primaryButton}
+        />
       </SafeAreaView>
 
       <LoadingModal isVisible={loading} />

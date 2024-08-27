@@ -13,6 +13,7 @@ import SignIn from '../screens/SignIn';
 import SignUp from '../screens/SignUp';
 import VerificationOTP from '../screens/VerificationOTP';
 import Profile from '../screens/Profile';
+import Cart from '../screens/Cart';
 
 export default function StackNavigator() {
   const Stack = createStackNavigator();
@@ -86,6 +87,24 @@ export default function StackNavigator() {
         }}
       />
       <Stack.Screen
+        name="Cart"
+        component={Cart}
+        options={{
+          title: t('tab.Cart'),
+          headerStyle: {
+            shadowColor: '#000',
+            shadowOffset: {
+              width: 0,
+              height: 1,
+            },
+            shadowOpacity: 0.18,
+            shadowRadius: 1.0,
+
+            elevation: 1,
+          },
+        }}
+      />
+      <Stack.Screen
         name="Buying"
         component={Buying}
         options={{
@@ -103,6 +122,7 @@ export default function StackNavigator() {
           },
         }}
       />
+
       <Stack.Screen
         name="Profile"
         component={Profile}

@@ -1,5 +1,5 @@
-import {View, Text, ScrollView, Button, SafeAreaView} from 'react-native';
-import React, {useCallback, useMemo, useRef, useState} from 'react';
+import {View, Text, ScrollView} from 'react-native';
+import React, {useCallback, useMemo, useRef} from 'react';
 import SettingTouchable from '../../components/Account/index';
 import {Colors, Icons} from '../../constants';
 import {
@@ -89,6 +89,15 @@ export default function Account() {
           <View style={styles.settingWrapper}>
             <Icons.BOX width={24} height={24} color={Colors.BLACK} />
             <Text style={styles.settingText}>{t('account.Buying')}</Text>
+          </View>
+          <Icons.ARROWRIGHT width={18} height={18} />
+        </View>
+      </SettingTouchable>
+      <SettingTouchable onPress={() => navigate('Cart')}>
+        <View style={styles.settingContainer}>
+          <View style={styles.settingWrapper}>
+            <Icons.CART width={24} height={24} color={Colors.BLACK} />
+            <Text style={styles.settingText}>{t('account.Cart')}</Text>
           </View>
           <Icons.ARROWRIGHT width={18} height={18} />
         </View>

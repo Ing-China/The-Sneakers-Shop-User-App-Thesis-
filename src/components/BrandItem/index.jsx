@@ -4,7 +4,7 @@ import styles from './style';
 import {CachedImage} from '@georstat/react-native-image-cache';
 import LoadingImage from '../LoadingImage';
 
-export default function BrandCart({brand, onLayout}) {
+export default function BrandItem({brand, onLayout}) {
   return (
     <View style={styles.container} onLayout={onLayout}>
       <View style={styles.imageWrapper}>

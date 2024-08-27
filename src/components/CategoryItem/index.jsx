@@ -5,7 +5,7 @@ import LoadingImage from '../LoadingImage';
 import {CachedImage} from '@georstat/react-native-image-cache';
 import styles from './style';
 
-export default function CategoryCart({category, onLayout}) {
+export default function CategoryItem({category, onLayout}) {
   return (
     <Touchable>
       <View style={styles.container} onLayout={onLayout}>

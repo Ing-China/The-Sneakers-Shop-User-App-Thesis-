@@ -6,13 +6,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.WHITE,
+  },
+  wrapper: {
     padding: 15,
   },
   label: {
     fontFamily: Fonts.SEMIBOLD,
     color: Colors.BLACK,
     fontSize: Sizes.THIRDTY,
-    marginTop: 30,
   },
   infoLabel: {
     fontFamily: Fonts.REGULAR,
@@ -43,30 +44,14 @@ const styles = StyleSheet.create({
   resendWrapper: {
     flexDirection: 'row',
     justifyContent: 'center',
-    marginTop: 15,
   },
   resend: {
     fontFamily: Fonts.SEMIBOLD,
     color: Colors.BLACK,
     fontSize: Sizes.SIXTEEN,
   },
-  btnLogin: {
-    marginTop: 20,
-    padding: 10,
-    color: Colors.WHITE,
-    backgroundColor: Colors.BLACK,
-    textAlign: 'center',
-    fontFamily: Fonts.MEDIUM,
-    fontSize: Sizes.EIGHTEEN,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.2,
-    shadowRadius: 1.41,
-
-    elevation: 2,
+  primaryButton: {
+    paddingTop: 20,
   },
 });
 

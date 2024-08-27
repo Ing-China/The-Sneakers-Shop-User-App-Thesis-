@@ -1,18 +1,25 @@
-import {View, SafeAreaView, ScrollView, Text, FlatList} from 'react-native';
+import {
+  View,
+  SafeAreaView,
+  ScrollView,
+  Text,
+  FlatList,
+  StatusBar,
+} from 'react-native';
 import React, {useRef, useState} from 'react';
 
 import styles from './style';
 import SliderComponent from '../../components/Slider/inex';
 import {useTranslation} from 'react-i18next';
-import CartItem from '../../components/CartItem';
+import ProductItem from '../../components/ProductItem';
 import Touchable from '../../components/Account/index';
 
 import slider from '../../data/slider';
 import product from '../../data/product';
 import category from '../../data/category';
-import CategoryCart from '../../components/CategoryCart';
+import CategoryItem from '../../components/CategoryItem';
 import brand from '../../data/brand';
-import BrandCart from '../../components/BrandCart';
+import BrandItem from '../../components/BrandItem';
 import {Icons} from '../../constants';
 import bigslider from '../../data/bigslider';
 import BigSliderComponent from '../../components/BigSlider/inex';
@@ -56,7 +63,7 @@ export default function Home() {
   };
 
   return (
-    <SafeAreaView style={styles.safeContainer}>
+    <View style={styles.safeContainer}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <SliderComponent sliders={slider} />
 
@@ -71,7 +78,7 @@ export default function Home() {
           snapToInterval={productItemWidth + 15}
           viewabilityConfig={viewabilityConfig}
           renderItem={({item}) => (
-            <CartItem product={item} onLayout={onProductLayout} />
+            <ProductItem product={item} onLayout={onProductLayout} />
           )}
           showsHorizontalScrollIndicator={false}
           ItemSeparatorComponent={() => <View style={{width: 15}} />}
@@ -90,7 +97,7 @@ export default function Home() {
           snapToInterval={productItemWidth + 15}
           viewabilityConfig={viewabilityConfig}
           renderItem={({item}) => (
-            <CartItem product={item} onLayout={onProductLayout} />
+            <ProductItem product={item} onLayout={onProductLayout} />
           )}
           showsHorizontalScrollIndicator={false}
           ItemSeparatorComponent={() => <View style={{width: 15}} />}
@@ -109,7 +116,7 @@ export default function Home() {
           snapToInterval={categoryItemWidth + 15}
           viewabilityConfig={viewabilityConfig}
           renderItem={({item}) => (
-            <CategoryCart category={item} onLayout={onCategoryLayout} />
+            <CategoryItem category={item} onLayout={onCategoryLayout} />
           )}
           showsHorizontalScrollIndicator={false}
           ItemSeparatorComponent={() => <View style={{width: 15}} />}
@@ -137,7 +144,7 @@ export default function Home() {
           snapToInterval={brandItemWidth + 15}
           viewabilityConfig={viewabilityConfig}
           renderItem={({item}) => (
-            <BrandCart brand={item} onLayout={onBrandLayout} />
+            <BrandItem brand={item} onLayout={onBrandLayout} />
           )}
           showsHorizontalScrollIndicator={false}
           ItemSeparatorComponent={() => <View style={{width: 15}} />}
@@ -169,7 +176,35 @@ export default function Home() {
           snapToInterval={productItemWidth + 15}
           viewabilityConfig={viewabilityConfig}
           renderItem={({item}) => (
-            <CartItem product={item} onLayout={onProductLayout} />
+            <ProductItem product={item} onLayout={onProductLayout} />
+          )}
+          showsHorizontalScrollIndicator={false}
+          ItemSeparatorComponent={() => <View style={{width: 15}} />}
+          ListHeaderComponent={<View style={{width: 15}} />}
+          ListFooterComponent={<View style={{width: 15}} />}
+        />
+
+        <View style={styles.brandWrapper}>
+          <Text style={styles.recomLabel}>{t('home.Most Popular Shoes')}</Text>
+          <Touchable>
+            <View style={styles.navigateWrapper}>
+              <Text style={styles.seeAllBrand}>{t('home.See All')}</Text>
+              <Icons.RIGHTARROW width={20} height={20} />
+            </View>
+          </Touchable>
+        </View>
+
+        <FlatList
+          ref={flatListRef}
+          data={product}
+          keyExtractor={item => item.id}
+          horizontal={true}
+          snapToAlignment="start"
+          decelerationRate="fast"
+          snapToInterval={productItemWidth + 15}
+          viewabilityConfig={viewabilityConfig}
+          renderItem={({item}) => (
+            <ProductItem product={item} onLayout={onProductLayout} />
           )}
           showsHorizontalScrollIndicator={false}
           ItemSeparatorComponent={() => <View style={{width: 15}} />}
@@ -179,10 +214,28 @@ export default function Home() {
 
         <Text style={styles.recomLabel}>{t('home.All Product')}</Text>
 
+        <FlatList
+          ref={flatListRef}
+          data={product}
+          keyExtractor={item => item.id}
+          horizontal={true}
+          snapToAlignment="start"
+          decelerationRate="fast"
+          snapToInterval={productItemWidth + 15}
+          viewabilityConfig={viewabilityConfig}
+          renderItem={({item}) => (
+            <ProductItem product={item} onLayout={onProductLayout} />
+          )}
+          showsHorizontalScrollIndicator={false}
+          ItemSeparatorComponent={() => <View style={{width: 15}} />}
+          ListHeaderComponent={<View style={{width: 15}} />}
+          ListFooterComponent={<View style={{width: 15}} />}
+        />
+
         {/* <FlatList
           data={product}
           renderItem={({item, index}) => (
-            <CartItem
+            <ProductItem
               product={item}
               containerStyle={{
                 width: WINDOW_WIDTH / 2 - 30,
@@ -197,6 +250,6 @@ export default function Home() {
           ListFooterComponent={<View style={{height: 15}} />}
         /> */}
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }

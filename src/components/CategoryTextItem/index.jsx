@@ -4,7 +4,7 @@ import Touchable from '../../components/Account/index';
 import styles from './style';
 import Animated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
 
-export default function CategoryTextCart({category, isSelected, onPress}) {
+export default function CategoryTextItem({category, isSelected, onPress}) {
   const animatedStyles = useAnimatedStyle(() => ({
     transform: [{scaleX: withTiming(isSelected ? 1 : 0, {duration: 300})}],
   }));

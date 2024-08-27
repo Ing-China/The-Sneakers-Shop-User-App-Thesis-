@@ -16,50 +16,24 @@ import {useTranslation} from 'react-i18next';
 import auth from '@react-native-firebase/auth';
 import {phoneNumberWithoutZeroPrefix} from '../../helper';
 import LoadingModal from '../../components/LoadingModal';
+import PrimaryButton from '../../components/PrimaryButton';
+import PrimaryInput from '../../components/PrimaryInput';
+import {useToggle} from '../../hooks';
 
 export default function SignUp() {
-  const {t} = useTranslation();
+  //STATE
   const [name, setName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [validationErrors, setValidationErrors] = useState({});
   const [loading, setLoading] = useState(false);
 
-  const toggleShowPassword = () => {
-    setShowPassword(!showPassword);
-  };
-
-  const toggleShowConfirmPassword = () => {
-    setShowConfirmPassword(!showConfirmPassword);
-  };
-
-  const validateFields = () => {
-    const errors = {};
-    if (!name.trim()) {
-      errors.name = true;
-    }
-    if (!phoneNumber.trim()) {
-      errors.phoneNumber = true;
-    }
-    if (!password.trim()) {
-      errors.password = true;
-    }
-    if (!confirmPassword.trim()) {
-      errors.confirmPassword = true;
-    }
-    if (password !== confirmPassword) {
-      errors.passwordMismatch = true;
-    }
-
-    setValidationErrors(errors);
-    return Object.keys(errors).length === 0;
-  };
+  //HOOKS
+  const {t} = useTranslation();
+  const [isVisible1, toggleVisibility1] = useToggle();
+  const [isVisible2, toggleVisibility2] = useToggle();
 
   const onSignUp = async () => {
-    if (!validateFields()) return;
     setLoading(true);
 
     const formattedPhoneNumber = `+855${phoneNumberWithoutZeroPrefix(
@@ -94,20 +68,12 @@ export default function SignUp() {
           />
           <Text style={styles.signIn}>{t('signup.Sign Up')}</Text>
         </View>
-        <Text style={styles.inputLabel}>{t('signup.Name')}</Text>
-        <View style={styles.nameContainer}>
-          <TextInput
-            placeholder={t('signup.Name')}
-            placeholderTextColor={validationErrors.name ? 'red' : 'black'}
-            value={name}
-            onChangeText={setName}
-            style={[
-              styles.name,
-              styles.input,
-              validationErrors.name && styles.inputError,
-            ]}
-          />
-        </View>
+        <PrimaryInput
+          label={t('profile.Name')}
+          value={name}
+          onChangeText={setName}
+          placeholder={t('profile.Name')}
+        />
         <Text style={styles.inputLabel}>{t('signup.Phone Number')}</Text>
         <View style={styles.input1Container}>
           <View style={[styles.cambo, styles.input]}>
@@ -115,88 +81,40 @@ export default function SignUp() {
             <Text style={styles.camboLabel}>+855</Text>
           </View>
           <TextInput
-            placeholder={t('signup.Phone Number')}
-            placeholderTextColor={
-              validationErrors.phoneNumber ? 'red' : 'black'
-            }
             value={phoneNumber}
             onChangeText={setPhoneNumber}
-            style={[
-              styles.phoneNumber,
-              styles.input,
-              validationErrors.phoneNumber && styles.inputError,
-            ]}
+            style={[styles.phoneNumber, styles.input]}
             keyboardType="phone-pad"
           />
         </View>
-        <Text style={styles.inputLabel}>{t('signup.Password')}</Text>
-        <View style={styles.Wrapper}>
-          <View
-            style={[
-              styles.input2Container,
-              validationErrors.password && styles.inputError,
-            ]}>
-            <TextInput
-              placeholder={t('signup.Password')}
-              placeholderTextColor={validationErrors.password ? 'red' : 'black'}
-              secureTextEntry={!showPassword}
-              value={password}
-              onChangeText={setPassword}
-              style={styles.password}
-            />
-            {showPassword ? (
-              <Touchable onPress={toggleShowPassword}>
-                <Icons.EYEOPEN width={25} height={25} style={styles.icon} />
-              </Touchable>
-            ) : (
-              <Touchable onPress={toggleShowPassword}>
-                <Icons.EYECLOSE width={25} height={25} style={styles.icon} />
-              </Touchable>
-            )}
-          </View>
-        </View>
 
-        <Text style={styles.inputLabel}>{t('signup.Confirm Password')}</Text>
-        <View style={styles.Wrapper}>
-          <View
-            style={[
-              styles.input2Container,
-              validationErrors.confirmPassword && styles.inputError,
-              validationErrors.passwordMismatch && styles.inputError,
-            ]}>
-            <TextInput
-              placeholder={t('signup.Confirm Password')}
-              placeholderTextColor={
-                validationErrors.confirmPassword ||
-                validationErrors.passwordMismatch
-                  ? 'red'
-                  : 'black'
-              }
-              secureTextEntry={!showConfirmPassword}
-              value={confirmPassword}
-              onChangeText={setConfirmPassword}
-              style={styles.password}
-            />
-            {showConfirmPassword ? (
-              <Touchable onPress={toggleShowConfirmPassword}>
-                <Icons.EYEOPEN width={25} height={25} style={styles.icon} />
-              </Touchable>
-            ) : (
-              <Touchable onPress={toggleShowConfirmPassword}>
-                <Icons.EYECLOSE width={25} height={25} style={styles.icon} />
-              </Touchable>
-            )}
-          </View>
-          {validationErrors.passwordMismatch && (
-            <Text style={styles.errorText}>
-              {t('signup.Passwords do not match')}
-            </Text>
-          )}
-        </View>
+        <PrimaryInput
+          label={t('signup.Password')}
+          value={password}
+          onChangeText={setPassword}
+          placeholder={t('signup.Password')}
+          secureTextEntry={true}
+          showPassword={isVisible1}
+          toggleShowPassword={toggleVisibility1}
+          withEyeIcon={true}
+        />
 
-        <Touchable onPress={onSignUp}>
-          <Text style={styles.btnLogin}>{t('signup.Sign Up')}</Text>
-        </Touchable>
+        <PrimaryInput
+          label={t('signup.Confirm Password')}
+          value={confirmPassword}
+          onChangeText={setConfirmPassword}
+          placeholder={t('signup.Confirm Password')}
+          secureTextEntry={true}
+          showPassword={isVisible2}
+          toggleShowPassword={toggleVisibility2}
+          withEyeIcon={true}
+        />
+
+        <PrimaryButton
+          onPress={onSignUp}
+          title={t('signup.Sign Up')}
+          containerStyle={styles.primaryButton}
+        />
 
         <View style={styles.signUp}>
           <Text style={styles.account}>

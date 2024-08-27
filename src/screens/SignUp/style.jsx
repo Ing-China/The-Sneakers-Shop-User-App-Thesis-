@@ -54,9 +54,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     height: hp('5.5%'),
   },
-  inputError: {
-    borderColor: 'red',
-  },
   camboLabel: {
     fontFamily: Fonts.REGULAR,
     color: Colors.BLACK,
@@ -73,21 +70,8 @@ const styles = StyleSheet.create({
   phoneNumber: {
     flex: 0.7,
   },
-  input2Container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: 1,
-    borderRadius: 5,
-    height: hp('5.5%'),
-    borderColor: Colors.SILVER,
-  },
-  password: {
-    flex: 1,
-    fontFamily: Fonts.REGULAR,
-    color: Colors.BLACK,
-    fontSize: Sizes.EIGHTEEN,
-    padding: 10,
+  primaryButton: {
+    paddingTop: 35,
   },
   icon: {
     marginRight: 10,
@@ -100,26 +84,6 @@ const styles = StyleSheet.create({
     color: Colors.BLACK,
     fontSize: Sizes.EIGHTEEN,
   },
-  btnLogin: {
-    marginTop: 40,
-    marginHorizontal: 15,
-    padding: 10,
-    color: Colors.WHITE,
-    backgroundColor: Colors.BLACK,
-    textAlign: 'center',
-    fontFamily: Fonts.MEDIUM,
-    fontSize: Sizes.EIGHTEEN,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.2,
-    shadowRadius: 1.41,
-
-    elevation: 2,
-  },
-
   signUp: {
     flexDirection: 'row',
     justifyContent: 'center',

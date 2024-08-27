@@ -7,42 +7,73 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './style';
 import {Icons} from '../../constants';
 import Touchable from '../../components/Account/index';
 import {navigate} from '../../navigations/RootNavigation';
 import {useTranslation} from 'react-i18next';
+import auth from '@react-native-firebase/auth';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
+import {GOOGLE_AUTH_CLIENT_ID} from '../../constants/auth';
+import PrimaryButton from '../../components/PrimaryButton';
+import PrimaryInput from '../../components/PrimaryInput';
+import {useToggle} from '../../hooks';
 
 export default function SignIn() {
-  const {t} = useTranslation();
   const [phoneNumber, setPhoneNumber] = useState('');
   const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
-  const [validationErrors, setValidationErrors] = useState({});
 
-  const toggleShowPassword = () => {
-    setShowPassword(!showPassword);
-  };
-  const validateFields = () => {
-    const errors = {};
-    if (!phoneNumber.trim()) {
-      errors.phoneNumber = true;
-    }
-    if (!password.trim()) {
-      errors.password = true;
-    }
-
-    setValidationErrors(errors);
-    return Object.keys(errors).length === 0;
-  };
+  //HOOKS
+  const {t} = useTranslation();
+  const [isVisible1, toggleVisibility1] = useToggle();
 
   const login = () => {
-    if (validateFields()) {
-      console.log(phoneNumber);
-      console.log(password);
-    }
+    console.log(phoneNumber);
+    console.log(password);
   };
+
+  useEffect(() => {
+    GoogleSignin.configure({
+      webClientId: GOOGLE_AUTH_CLIENT_ID,
+      offlineAccess: true,
+    });
+  });
+
+  async function onGoogleButtonPress() {
+    try {
+      // Check if your device supports Google Play
+      await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
+      // Get the user's ID token
+      const {idToken} = await GoogleSignin.signIn();
+
+      // Create a Google credential with the token
+      const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+
+      // Sign-in the user with the credential
+      const userCredential = await auth().signInWithCredential(
+        googleCredential,
+      );
+
+      // Get the user information
+      const user = userCredential.user;
+      console.log('User Info:', user);
+
+      // Access user information
+      const userId = user.uid;
+      const userEmail = user.email;
+      const userName = user.displayName;
+      const userPhotoURL = user.photoURL;
+
+      console.log(`User ID: ${userId}`);
+      console.log(`Email: ${userEmail}`);
+      console.log(`Name: ${userName}`);
+      console.log(`Photo URL: ${userPhotoURL}`);
+    } catch (error) {
+      console.error('Error during Google Sign-In:', error);
+    }
+  }
+
   return (
     <KeyboardAvoidingView
       style={styles.container}
@@ -62,51 +93,34 @@ export default function SignIn() {
             <Text style={styles.camboLabel}>+855</Text>
           </View>
           <TextInput
-            placeholder={t('signin.Phone Number')}
-            placeholderTextColor={
-              validationErrors.phoneNumber ? 'red' : 'black'
-            }
-            style={[
-              styles.phoneNumber,
-              styles.input,
-              validationErrors.phoneNumber && styles.inputError,
-            ]}
+            placeholder={t('signup.Phone Number')}
+            value={phoneNumber}
+            onChangeText={setPhoneNumber}
+            style={[styles.phoneNumber, styles.input]}
+            keyboardType="phone-pad"
           />
         </View>
-        <Text style={styles.inputLabel}>{t('signin.Password')}</Text>
-        <View style={styles.Wrapper}>
-          <View
-            style={[
-              styles.input2Container,
-              validationErrors.password && styles.inputError,
-            ]}>
-            <TextInput
-              placeholder={t('signin.Password')}
-              placeholderTextColor={validationErrors.password ? 'red' : 'black'}
-              secureTextEntry={!showPassword}
-              value={password}
-              onChangeText={setPassword}
-              style={styles.password}
-            />
-            {showPassword ? (
-              <Touchable onPress={toggleShowPassword}>
-                <Icons.EYEOPEN width={25} height={25} style={styles.icon} />
-              </Touchable>
-            ) : (
-              <Touchable onPress={toggleShowPassword}>
-                <Icons.EYECLOSE width={25} height={25} style={styles.icon} />
-              </Touchable>
-            )}
-          </View>
-        </View>
+
+        <PrimaryInput
+          label={t('signin.Password')}
+          value={password}
+          onChangeText={setPassword}
+          placeholder={t('signin.Password')}
+          secureTextEntry={true}
+          showPassword={isVisible1}
+          toggleShowPassword={toggleVisibility1}
+          withEyeIcon={true}
+        />
 
         <Touchable>
           <Text style={styles.forgotPass}>{t('signin.Forgot Password?')}</Text>
         </Touchable>
 
-        <Touchable onPress={login}>
-          <Text style={styles.btnLogin}>{t('signin.Log in')}</Text>
-        </Touchable>
+        <PrimaryButton
+          onPress={login}
+          title={t('signin.Log in')}
+          containerStyle={styles.primaryButton}
+        />
 
         <View style={styles.containerLine}>
           <View style={styles.line} />
@@ -114,7 +128,7 @@ export default function SignIn() {
           <View style={styles.line} />
         </View>
 
-        <Touchable>
+        <Touchable onPress={onGoogleButtonPress}>
           <View style={styles.loginWithGoogle}>
             <Icons.GOOGLE />
             <Text style={styles.btnLoginGoogle}>

@@ -15,7 +15,8 @@
     "Are you sure?": "តើអ្នកប្រាកដទេ?",
     "We're sorry to see you go! Deleting your account is a permanent action that will erase all your data, including your profile and purchase history. This process is irreversible, so please confirm if you are sure you want to proceed.?": "យើង​សុំទោស​ដែល​ឃើញ​អ្នក​ទៅ! ការលុបគណនីរបស់អ្នកគឺជាសកម្មភាពអចិន្ត្រៃយ៍ដែលនឹងលុបទិន្នន័យរបស់អ្នកទាំងអស់ រួមទាំងប្រវត្តិរូប និងប្រវត្តិការទិញរបស់អ្នក។ ដំណើរការនេះមិនអាចត្រឡប់វិញបានទេ ដូច្នេះសូមបញ្ជាក់ប្រសិនបើអ្នកប្រាកដថាអ្នកចង់បន្ត។",
     "Cancel": "បោះបង់",
-    "Confirm Delete": "បញ្ជាក់ការលុប"
+    "Confirm Delete": "បញ្ជាក់ការលុប",
+    "Cart": "ទំនិញដែលដាក់ចូលកន្ត្រក"
   },
   "tab": {
     "Account": "គណនី",
@@ -25,7 +26,8 @@
     "Favorite": "បញ្ជីទំនិញចូលចិត្ត",
     "Notification": "ការជូនដំណឹង",
     "Buying": "ការបញ្ជាទិញ",
-    "Profile": "ប្រវត្តិរូប"
+    "Profile": "ប្រវត្តិរូប",
+    "Cart": "ទំនិញដែលដាក់ចូលកន្ត្រក"
   },
   "startUp": {
     "Version": "កំណែ",
@@ -39,7 +41,8 @@
     "See All Brands": "មើលម៉ាកទាំងអស់",
     "Trending Sneakers": "ស្បែកជើងកំពុងពេញនិយម",
     "See All": "មើលទាំងអស់",
-    "All Product": "ផលិតផលទាំងអស់"
+    "All Product": "ផលិតផលទាំងអស់",
+    "Most Popular Shoes": "ស្បែកជើងពេញនិយមបំផុត។"
   },
   "search": {
     "Find your favourite one": "ស្វែងរកមួយដែលអ្នកចូលចិត្ត"
@@ -67,7 +70,8 @@
     "Confirm Password": "បញ្ជាក់ពាក្យសម្ងាត់",
     "Log In": "ចូលគណនី",
     "Already have an account?": "មានគណនីរួចហើយ?",
-    "Passwords do not match": "ពាក្យសម្ងាត់មិនត្រូវគ្នាទេ"
+    "Passwords do not match": "ពាក្យសម្ងាត់មិនត្រូវគ្នាទេ",
+    "Verify": "ផ្ទៀងផ្ទាត់"
   },
   "otp": {
     "Verification code": "លេខកូដផ្ទៀងផ្ទាត់",
@@ -87,5 +91,10 @@
     "Old Password": "ពាក្យសម្ងាត់ចាស់",
     "New Password": "ពាក្យសម្ងាត់ថ្មី",
     "Save": "រក្សាទុក"
+  },
+  "cart": {
+    "ORDERS": "ការបញ្ជាទិញ",
+    "Items": "ទំនិញ",
+    "size": "ទំហំ"
   }
 }
