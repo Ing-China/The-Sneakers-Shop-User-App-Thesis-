@@ -27,7 +27,8 @@
     "Notification": "Notification",
     "Buying": "Buying",
     "Profile": "Profile",
-    "Cart": "Cart"
+    "Cart": "Cart",
+    "Product Image": "Product Image"
   },
   "startUp": {
     "Version": "Version",
@@ -97,5 +98,9 @@
     "Items": "Items",
     "size": "Size",
     "Check Out": "Check Out"
+  },
+  "detail": {
+    "Size": "Size",
+    "Select Size": "Select Size"
   }
 }

@@ -18,9 +18,9 @@ import {CachedImage} from '@georstat/react-native-image-cache';
 
 import profile from '../../data/profile';
 import LoadingImage from '../../components/LoadingImage';
+import CustomBottomSheetModal from '../../components/CustomBottomSheetModal';
 
 export default function Account() {
-  const bottomSheetModalRef = useRef(null);
   const dispatch = useDispatch();
   const {t} = useTranslation();
   const settings = useSettings();
@@ -35,45 +35,31 @@ export default function Account() {
     dispatch(setToggleLanguage('kh'));
   };
 
-  // variables
-  const snapPoints = useMemo(() => ['27%'], []);
+  const modalRef = useRef(null);
 
-  // callbacks
-  const handlePresentModalPress = useCallback(() => {
-    bottomSheetModalRef.current?.present();
-  }, []);
-
-  const handleSheetChanges = useCallback(index => {
-    console.log('handleSheetChanges', index);
-  }, []);
-  const renderBackdrop = useCallback(
-    props => (
-      <BottomSheetBackdrop
-        disappearsOnIndex={-1}
-        appearsOnIndex={0}
-        {...props}
-      />
-    ),
-    [],
-  );
+  const handleOpenModal = () => {
+    modalRef.current?.present();
+  };
 
   //UI KIT
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-      <View style={styles.profileContainer}>
-        <View style={styles.imageContainer}>
-          <CachedImage
-            style={styles.image}
-            resizeMode="cover"
-            imageStyle={{borderRadius: 100}}
-            source={profile.imageUrl}
-            loadingImageComponent={() => (
-              <LoadingImage style={{height: 90, width: 90}} />
-            )}
-          />
+      <SettingTouchable onPress={() => navigate('Profile')}>
+        <View style={styles.profileContainer}>
+          <View style={styles.imageContainer}>
+            <CachedImage
+              style={styles.image}
+              resizeMode="cover"
+              imageStyle={{borderRadius: 100}}
+              source={profile.imageUrl}
+              loadingImageComponent={() => (
+                <LoadingImage style={{height: 90, width: 90}} />
+              )}
+            />
+          </View>
+          <Text style={styles.name}>{profile.name}</Text>
         </View>
-        <Text style={styles.name}>{profile.name}</Text>
-      </View>
+      </SettingTouchable>
 
       <SettingTouchable onPress={() => navigate('Profile')}>
         <View style={styles.settingContainer}>
@@ -120,7 +106,7 @@ export default function Account() {
           <Icons.ARROWRIGHT width={18} height={18} />
         </View>
       </SettingTouchable>
-      <SettingTouchable onPress={handlePresentModalPress}>
+      <SettingTouchable onPress={handleOpenModal}>
         <View style={styles.settingContainer}>
           <View style={styles.settingWrapper}>
             <Icons.TRANSLATE width={24} height={24} color={Colors.BLACK} />
@@ -138,8 +124,9 @@ export default function Account() {
           <Icons.ARROWRIGHT width={18} height={18} />
         </View>
       </SettingTouchable>
+
       <SettingTouchable onPress={() => navigate('SignIn')}>
-        <View style={styles.settingContainer}>
+        <View style={[styles.settingContainer, styles.containerStyle]}>
           <View style={styles.settingWrapper}>
             <Icons.LOGOUT width={24} height={24} color={Colors.BLACK} />
             <Text style={styles.settingText}>{t('account.Sign Out')}</Text>
@@ -148,36 +135,28 @@ export default function Account() {
         </View>
       </SettingTouchable>
 
-      <BottomSheetModal
-        ref={bottomSheetModalRef}
-        index={0}
-        snapPoints={snapPoints}
-        backdropComponent={renderBackdrop}
-        onChange={handleSheetChanges}
-        backgroundStyle={{borderRadius: null}}>
-        <BottomSheetView style={styles.contentContainer}>
-          <Text style={styles.langLabel}>{t('account.Choose Language')}</Text>
-          <SettingTouchable onPress={switchToKhmer}>
-            <View style={styles.languageContainer}>
-              <View style={styles.languageWrapper}>
-                <Icons.CAMBO width={35} height={25} />
-                <Text style={styles.langText}>{t('account.ភាសាខ្មែរ')}</Text>
-              </View>
-              {settings === 'kh' && <Icons.CHECK width={18} height={18} />}
+      <CustomBottomSheetModal ref={modalRef} snapPoints={['27%']}>
+        <Text style={styles.langLabel}>{t('account.Choose Language')}</Text>
+        <SettingTouchable onPress={switchToKhmer}>
+          <View style={styles.languageContainer}>
+            <View style={styles.languageWrapper}>
+              <Icons.CAMBO width={35} height={25} />
+              <Text style={styles.langText}>{t('account.ភាសាខ្មែរ')}</Text>
             </View>
-          </SettingTouchable>
+            {settings === 'kh' && <Icons.CHECK width={18} height={18} />}
+          </View>
+        </SettingTouchable>
 
-          <SettingTouchable onPress={switchToEnglish}>
-            <View style={styles.languageContainer}>
-              <View style={styles.languageWrapper}>
-                <Icons.UK width={35} height={25} />
-                <Text style={styles.langText}>{t('account.ភាសាអង់គ្លេស')}</Text>
-              </View>
-              {settings === 'en' && <Icons.CHECK width={18} height={18} />}
+        <SettingTouchable onPress={switchToEnglish}>
+          <View style={styles.languageContainer}>
+            <View style={styles.languageWrapper}>
+              <Icons.UK width={35} height={25} />
+              <Text style={styles.langText}>{t('account.ភាសាអង់គ្លេស')}</Text>
             </View>
-          </SettingTouchable>
-        </BottomSheetView>
-      </BottomSheetModal>
+            {settings === 'en' && <Icons.CHECK width={18} height={18} />}
+          </View>
+        </SettingTouchable>
+      </CustomBottomSheetModal>
     </ScrollView>
   );
 }

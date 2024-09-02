@@ -19,7 +19,7 @@ export default function Cart() {
         ListHeaderComponent={<CartHeader count={3} />}
         showsVerticalScrollIndicator={false}
         ItemSeparatorComponent={() => <View style={{height: 15}} />}
-        ListFooterComponent={<View style={{height: 15}} />}
+        ListFooterComponent={<View style={{height: 120}} />}
       />
 
       <View style={styles.checkoutWrapper}>

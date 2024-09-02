@@ -29,6 +29,9 @@ import Cart from '../../assets/icons/cart.svg';
 import CartDelete from '../../assets/icons/cart_delete.svg';
 import minus from '../../assets/icons/minus.svg';
 import plus from '../../assets/icons/plus.svg';
+import next from '../../assets/icons/next.svg';
+import prev from '../../assets/icons/prev.svg';
+import arrow_down from '../../assets/icons/arrow_down.svg';
 
 export default class Icons {
   static HOME = props => <HomeIcon {...props} />;
@@ -62,4 +65,7 @@ export default class Icons {
   static CARTDELETE = CartDelete;
   static MINUS = minus;
   static PLUS = plus;
+  static NEXT = next;
+  static PREV = prev;
+  static ARROWDOWN = arrow_down;
 }

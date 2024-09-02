@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     width: '90%',
     fontFamily: Fonts.MEDIUM,
     fontSize: Sizes.EIGHTEEN,
-    marginTop: 2,
+    paddingVertical: 10,
     color: Colors.BLACK,
   },
   category: {

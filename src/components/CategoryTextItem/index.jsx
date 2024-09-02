@@ -6,7 +6,7 @@ import Animated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
 
 export default function CategoryTextItem({category, isSelected, onPress}) {
   const animatedStyles = useAnimatedStyle(() => ({
-    transform: [{scaleX: withTiming(isSelected ? 1 : 0, {duration: 300})}],
+    transform: [{scaleX: withTiming(isSelected ? 1 : 0, {duration: 500})}],
   }));
 
   return (

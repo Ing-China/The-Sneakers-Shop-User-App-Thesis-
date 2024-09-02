@@ -24,6 +24,7 @@ import {Icons} from '../../constants';
 import bigslider from '../../data/bigslider';
 import BigSliderComponent from '../../components/BigSlider/inex';
 import {WINDOW_WIDTH} from '@gorhom/bottom-sheet';
+import {navigate} from '../../navigations/RootNavigation';
 
 export default function Home() {
   const {t} = useTranslation();
@@ -78,7 +79,11 @@ export default function Home() {
           snapToInterval={productItemWidth + 15}
           viewabilityConfig={viewabilityConfig}
           renderItem={({item}) => (
-            <ProductItem product={item} onLayout={onProductLayout} />
+            <ProductItem
+              product={item}
+              onLayout={onProductLayout}
+              onPress={() => navigate('ProductDetail')}
+            />
           )}
           showsHorizontalScrollIndicator={false}
           ItemSeparatorComponent={() => <View style={{width: 15}} />}

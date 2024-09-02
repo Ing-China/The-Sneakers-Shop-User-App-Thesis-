@@ -6,8 +6,14 @@ import {Colors, Icons} from '../../constants';
 
 import Touchable from '../Account/index';
 import LoadingImage from '../LoadingImage';
+import FavoriteButton from '../FavoriteButton';
 
-export default function ProductItem({product, onLayout, containerStyle}) {
+export default function ProductItem({
+  onPress,
+  product,
+  onLayout,
+  containerStyle,
+}) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   useMemo(() => {
@@ -19,7 +25,7 @@ export default function ProductItem({product, onLayout, containerStyle}) {
   };
 
   return (
-    <Touchable>
+    <Touchable onPress={onPress}>
       <View style={[styles.container, containerStyle]} onLayout={onLayout}>
         <View style={styles.discountWrapper}>
           <Icons.DISCOUNT style={styles.discount} width={40} height={40} />
@@ -30,23 +36,7 @@ export default function ProductItem({product, onLayout, containerStyle}) {
         </View>
 
         <View style={styles.favoriteWrapper}>
-          <Touchable onPress={toggleFavorite}>
-            {isFavorite ? (
-              <Icons.FAVORITEFILL
-                style={styles.favorite}
-                width={24}
-                height={24}
-                fill={Colors.BLACK}
-              />
-            ) : (
-              <Icons.FAVORITE
-                style={styles.favorite}
-                width={24}
-                height={24}
-                color={Colors.BLACK}
-              />
-            )}
-          </Touchable>
+          <FavoriteButton onPress={toggleFavorite} isFavorite={isFavorite} />
         </View>
 
         <CachedImage

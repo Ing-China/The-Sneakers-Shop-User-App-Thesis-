@@ -41,6 +41,9 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0.5,
     borderColor: Colors.SILVER,
   },
+  containerStyle: {
+    marginBottom: 30,
+  },
   settingWrapper: {
     flexDirection: 'row',
     gap: 15,
@@ -50,9 +53,6 @@ const styles = StyleSheet.create({
     fontFamily: Fonts.MEDIUM,
     fontSize: Sizes.TWENTY,
     color: Colors.BLACK,
-  },
-  contentContainer: {
-    padding: 15,
   },
   langLabel: {
     fontSize: Sizes.TWENTY,

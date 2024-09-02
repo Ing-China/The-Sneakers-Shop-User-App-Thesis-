@@ -4,6 +4,7 @@ import {SCREEN_WIDTH} from '@gorhom/bottom-sheet';
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     backgroundColor: '#FFFFFF',
   },
   settingContainer: {

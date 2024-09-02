@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   },
   discount: {
     textAlign: 'center',
-    lineHeight: 12,
+    lineHeight: 15,
     fontFamily: Fonts.REGULAR,
     color: Colors.WHITE,
     fontSize: Sizes.FIFTEEN,
