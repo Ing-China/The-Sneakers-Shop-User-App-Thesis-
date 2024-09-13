@@ -1,12 +1,4 @@
-import {
-  Dimensions,
-  FlatList,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {FlatList, ScrollView, Text, View} from 'react-native';
 import React, {useMemo, useRef, useState} from 'react';
 import ProductDetailData from '../../data/productDetail';
 import ProductDetailImage from '../../components/ProductDetailImage';
@@ -37,7 +29,7 @@ export default function ProductDetail() {
     modalRef.current?.present();
   };
 
-  const ITEM_HEIGHT = 60; // Adjust based on your design
+  const ITEM_HEIGHT = 65; // Adjust based on your design
   const PADDING = 60; // Additional padding at the bottom
   const ITEMS_PER_ROW = 3;
 

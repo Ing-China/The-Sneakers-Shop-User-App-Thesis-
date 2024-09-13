@@ -1,13 +1,6 @@
-import {View, Text, ScrollView, Button, Linking} from 'react-native';
-import React, {useCallback, useMemo, useRef} from 'react';
-import {
-  BottomSheetBackdrop,
-  BottomSheetModal,
-  BottomSheetView,
-  TouchableOpacity,
-} from '@gorhom/bottom-sheet';
-import {navigate} from '../../navigations/RootNavigation';
-import {useNavigation} from '@react-navigation/native';
+import {View, Text, ScrollView, Linking} from 'react-native';
+import React, {useRef} from 'react';
+
 import SettingTouchable from '../../components/Account/index';
 import styles from './style';
 import {Colors, Icons} from '../../constants';

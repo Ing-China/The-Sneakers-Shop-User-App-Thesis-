@@ -1,6 +1,5 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import Settings from '../screens/Settings';
 import Address, {
   screenOptions as AddressScreenOptions,
 } from '../screens/Address';
@@ -19,6 +18,7 @@ import Touchable from '../components/Account/index';
 import {navigate} from './RootNavigation';
 import {View} from 'react-native';
 import Gallary from '../screens/Gallary';
+import Settings from '../screens/Settings';
 
 export default function StackNavigator() {
   const Stack = createStackNavigator();

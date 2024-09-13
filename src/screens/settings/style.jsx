@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 import {Colors, Fonts, Sizes} from '../../constants';
 import {SCREEN_WIDTH} from '@gorhom/bottom-sheet';
 
-const styles = StyleSheet.create({
+const style = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFFFFF',
@@ -79,4 +79,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default styles;
+export default style;
